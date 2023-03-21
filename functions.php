@@ -418,7 +418,7 @@ function cafe_cheesecake_register_taxonomies() {
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'menu-type' ),
     );
-    register_taxonomy( 'cafe-menu-type', array( 'cafe-menu', 'products' ), $args );
+    register_taxonomy( 'cafe-menu-type', array( 'cafe-menu', 'product' ), $args );
 
 
     // Add Location Type taxonomy
