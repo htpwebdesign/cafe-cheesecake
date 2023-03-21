@@ -420,6 +420,34 @@ function cafe_cheesecake_register_taxonomies() {
     );
     register_taxonomy( 'cafe-menu-type', array( 'cafe-menu', 'product' ), $args );
 
+	    // Add product-type taxonomy
+		$labels = array(
+			'name'              => _x( 'Product Type', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Product Type', 'taxonomy singular name' ),
+			'search_items'      => __( 'Search Product Types' ),
+			'all_items'         => __( 'All Product Type' ),
+			'parent_item'       => __( 'Parent Product Type' ),
+			'parent_item_colon' => __( 'Parent Product Type:' ),
+			'edit_item'         => __( 'Edit Product Type' ),
+			'view_item'         => __( 'View Product Type' ),
+			'update_item'       => __( 'Update Product Type' ),
+			'add_new_item'      => __( 'Add New Product Type' ),
+			'new_item_name'     => __( 'New Product Type Name' ),
+			'menu_name'         => __( 'Product Type' ),
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_in_menu'      => true,
+			'show_in_nav_menu'  => true,
+			'show_in_rest'      => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'product-type' ),
+		);
+		register_taxonomy( 'cafe-product-type', array( 'cafe-menu', 'product' ), $args );
+
 
     // Add Location Type taxonomy
     $labels = array(
