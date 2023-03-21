@@ -189,55 +189,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 
 function cafe_cheesecake_register_custom_post_types() {
-	// Register Menu CPT
-	$labels = array(
-	   'name'                  => _x( 'Menu', 'post type general name' ),
-	   'singular_name'         => _x( 'Menu', 'post type singular name'),
-	   'menu_name'             => _x( 'Menu', 'admin menu' ),
-	   'name_admin_bar'        => _x( 'Menu', 'add new on admin bar' ),
-	   'add_new'               => _x( 'Add New', 'menu' ),
-	   'add_new_item'          => __( 'Add New Menu' ),
-	   'new_item'              => __( 'New Menu' ),
-	   'edit_item'             => __( 'Edit Menu' ),
-	   'view_item'             => __( 'View Menu' ),
-	   'all_items'             => __( 'All Menus' ),
-	   'search_items'          => __( 'Search Menus' ),
-	   'parent_item_colon'     => __( 'Parent Menus:' ),
-	   'not_found'             => __( 'No menus found.' ),
-	   'not_found_in_trash'    => __( 'No menus found in Trash.' ),
-	   'archives'              => __( 'Menu Archives'),
-	   'insert_into_item'      => __( 'Insert into menu'),
-	   'uploaded_to_this_item' => __( 'Uploaded to this menu'),
-	   'filter_item_list'      => __( 'Filter menus list'),
-	   'items_list_navigation' => __( 'Menus list navigation'),
-	   'items_list'            => __( 'Menus list'),
-	   'featured_image'        => __( 'Menu featured image'),
-	   'set_featured_image'    => __( 'Set menu featured image'),
-	   'remove_featured_image' => __( 'Remove menu featured image'),
-	   'use_featured_image'    => __( 'Use as featured image'),
-   );
-
-   $args = array(
-	   'labels'             => $labels,
-	   'public'             => true,
-	   'publicly_queryable' => true,
-	   'show_ui'            => true,
-	   'show_in_menu'       => true,
-	   'show_in_nav_menus'  => true,
-	   'show_in_admin_bar'  => true,
-	   'show_in_rest'       => true,
-	   'query_var'          => true,
-	   'rewrite'            => array( 'slug' => 'menu' ),
-	   'capability_type'    => 'post',
-	   'has_archive'        => true,
-	   'hierarchical'       => false,
-	   'menu_position'      => 5,
-	   'menu_icon'          => 'dashicons-archive',
-	   'supports'           => array( 'title', 'thumbnail' ),
-   );
-
-   register_post_type( 'cafe-menu', $args );
-
 	// Register Jobs CPT
 	$labels = array(
 		'name'                  => _x( 'Jobs', 'post type general name' ),
@@ -392,61 +343,33 @@ add_action( 'init', 'cafe_cheesecake_register_custom_post_types' );
 
 
 function cafe_cheesecake_register_taxonomies() {
-    // Add Menu Type taxonomy
-    $labels = array(
-        'name'              => _x( 'Menu Type', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Menu Type', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Menu Types' ),
-        'all_items'         => __( 'All Menu Type' ),
-        'parent_item'       => __( 'Parent Menu Type' ),
-        'parent_item_colon' => __( 'Parent Menu Type:' ),
-        'edit_item'         => __( 'Edit Menu Type' ),
-        'view_item'         => __( 'View Menu Type' ),
-        'update_item'       => __( 'Update Menu Type' ),
-        'add_new_item'      => __( 'Add New Menu Type' ),
-        'new_item_name'     => __( 'New Menu Type Name' ),
-        'menu_name'         => __( 'Menu Type' ),
-    );
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_in_menu'      => true,
-        'show_in_nav_menu'  => true,
-        'show_in_rest'      => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'menu-type' ),
-    );
-    register_taxonomy( 'cafe-menu-type', array( 'cafe-menu', 'product' ), $args );
-
-	    // Add product-type taxonomy
-		$labels = array(
-			'name'              => _x( 'Product Type', 'taxonomy general name' ),
-			'singular_name'     => _x( 'Product Type', 'taxonomy singular name' ),
-			'search_items'      => __( 'Search Product Types' ),
-			'all_items'         => __( 'All Product Type' ),
-			'parent_item'       => __( 'Parent Product Type' ),
-			'parent_item_colon' => __( 'Parent Product Type:' ),
-			'edit_item'         => __( 'Edit Product Type' ),
-			'view_item'         => __( 'View Product Type' ),
-			'update_item'       => __( 'Update Product Type' ),
-			'add_new_item'      => __( 'Add New Product Type' ),
-			'new_item_name'     => __( 'New Product Type Name' ),
-			'menu_name'         => __( 'Product Type' ),
-		);
-		$args = array(
-			'hierarchical'      => true,
-			'labels'            => $labels,
-			'show_ui'           => true,
-			'show_in_menu'      => true,
-			'show_in_nav_menu'  => true,
-			'show_in_rest'      => true,
-			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'product-type' ),
-		);
-		register_taxonomy( 'cafe-product-type', array( 'cafe-menu', 'product' ), $args );
+	// Add product-type taxonomy
+	$labels = array(
+		'name'              => _x( 'Product Type', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Product Type', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Product Types' ),
+		'all_items'         => __( 'All Product Type' ),
+		'parent_item'       => __( 'Parent Product Type' ),
+		'parent_item_colon' => __( 'Parent Product Type:' ),
+		'edit_item'         => __( 'Edit Product Type' ),
+		'view_item'         => __( 'View Product Type' ),
+		'update_item'       => __( 'Update Product Type' ),
+		'add_new_item'      => __( 'Add New Product Type' ),
+		'new_item_name'     => __( 'New Product Type Name' ),
+		'menu_name'         => __( 'Product Type' ),
+	);
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_in_menu'      => true,
+		'show_in_nav_menu'  => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'product-type' ),
+	);
+	register_taxonomy( 'cafe-product-type', array(  'product' ), $args );		
 
 
     // Add Location Type taxonomy
