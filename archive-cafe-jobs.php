@@ -12,40 +12,68 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
-
 			<header class="page-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				post_type_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
+			<div class="jobs-container">
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			$terms = get_terms( 
+				array(
+					'taxonomy' => 'cafe-location-type',
+					'order'      => 'ASC',
+				) 
+			);
+			if ( $terms && ! is_wp_error( $terms ) ) {
+				foreach ( $terms as $term ) {
+					?>
+					<div class="location-container">
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+					<h2 class="location-name"><?php echo esc_html( $term->name ); ?></h2>
+					<?php
+					$args = array(
+						'post_type'      => 'cafe-jobs',
+						'posts_per_page' => -1,
+						'order'          => 'ASC',
+						'orderby'        => 'title',
+						'tax_query'      => array (
+							array (
+								'taxonomy' => 'cafe-location-type',
+								'field'    => 'slug',
+								'terms'    => $term->slug, 
+							)
+						),
 
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+					);
+					$query = new WP_Query( $args );
+						
+						if ( $query -> have_posts() ){
+							while ( $query -> have_posts() ) {
+								$query -> the_post();
+								if ( function_exists( 'get_field' ) ) {
+								?>
+								<div class="position-container">
+                                <h3 class="position-title"><?php the_title(); ?></h3> 
+                                <p class="position-description"><?php the_field('position_description'); ?></p> 
+								</div>
+                                <?php
+								}
+                            
+							}
+							wp_reset_postdata();
+						}
+						?>
+					</div>
+						<?php
+					}
+				};
+			?>
+			</div>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
