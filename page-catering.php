@@ -27,9 +27,6 @@ get_header();
 			// outputs form and header
 			the_post();
 
-			// get_template_part( 'template-parts/content', 'page' );
-
-
 			$args = array(
 				'post_type'      => 'cafe-catering',
 				'posts_per_page' => -1,
