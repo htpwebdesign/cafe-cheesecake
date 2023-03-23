@@ -50,7 +50,12 @@ get_header();
 						echo '<article class="catering-options">';
 						if ( get_field( 'service_type_title' ) ) {
 							echo '<h3 id="'. esc_attr( get_the_ID() ) . '">' . esc_html( get_the_title() ) .'</h3>';
-							echo '<p>' . the_field( 'service_type_description') . '</p>';
+							?>
+							<p class="catering-option-description"> 
+							<?php
+							the_field( 'service_type_description'); ?>
+							</p>
+							<?php
 						}
 						echo '</article>';
 						}
