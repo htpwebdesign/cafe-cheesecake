@@ -37,15 +37,15 @@ get_header();
 						}
 				
 						if ( get_field( 'company_heading' ) ) {
-							echo '<h2>' . the_field( 'company_heading' ); '</h2>';
+							echo '<h2>' . the_field( 'company_heading' ) . '</h2>';
 						}
 						
 						if ( get_field( 'company_background' ) ) {
-							echo '<p>' . the_field( 'company_background' ); '</p>';
+							echo '<p>' . the_field( 'company_background' ) . '</p>';
 						}
 
 						if ( get_field( 'founder_heading' ) ) {
-							echo '<h2>' . the_field( 'founder_heading' ); '</h2>';
+							echo '<h2>' . the_field( 'founder_heading' ) . '</h2>';
 						}
 
 						if ( get_field( 'founder_image' ) ) {
@@ -55,15 +55,15 @@ get_header();
 
 						if ( get_field( 'founder_name' ) ) {
 							// Changing this <p> to <h3> causes founder_bio to become <h3> instead for some reason in the front end
-							echo '<h3>' . get_field( 'founder_name' ); '</h3>'; 
+							echo '<h3>' . get_field( 'founder_name' ) . '</h3>'; 
 						}
 						
 						if ( get_field( 'founder_bio' ) ) {
-							echo '<p>' . get_field( 'founder_bio' ); '</p>';
+							echo '<p>' . get_field( 'founder_bio' ) . '</p>';
 						}
 
 						if ( get_field( 'our_locations_heading' ) ) {
-							echo '<h3>' . get_field( 'our_locations_heading' ); '</h3>';
+							echo '<h3>' . get_field( 'our_locations_heading' ) . '</h3>';
 						}
 
 
@@ -74,11 +74,11 @@ get_header();
 						}
 
 						if ( get_field( 'join_our_team_heading' ) ) {
-							echo '<h3>' . get_field( 'join_our_team_heading' ); '</h3>';
+							echo '<h3>' . get_field( 'join_our_team_heading' ) . '</h3>';
 						}
 
 						if ( get_field( 'join_our_team_description' ) ) {
-							echo '<p>' . get_field( 'join_our_team_description' ); '</p>';
+							echo '<p>' . get_field( 'join_our_team_description' ) . '</p>';
 						}
 
 						$urljoin = get_field( 'join_our_team_button' );

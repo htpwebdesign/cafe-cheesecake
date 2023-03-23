@@ -21,7 +21,6 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
 			?>
 			<section class="home-blog">
 				<?php
@@ -56,11 +55,11 @@ get_header();
 					}
 
 					if ( get_field( 'our_cheesecakes_heading' ) ) {
-						echo '<h3>' . get_field( 'our_cheesecakes_heading' ); '</h3>';
+						echo '<h3>' . get_field( 'our_cheesecakes_heading' ) . '</h3>';
 					}
 
 					if ( get_field( 'our_cheesecakes_description' ) ) {
-						echo '<p>' . get_field( 'our_cheesecakes_description' ); '</p>';
+						echo '<p>' . get_field( 'our_cheesecakes_description' ) . '</p>';
 					}
 
 					$url = get_field( 'our_cheesecakes_read_more' );
@@ -70,7 +69,7 @@ get_header();
 						}
 					
 					if ( get_field( 'favourites_heading' ) ) {
-						echo '<h3>' . get_field( 'favourites_heading' ); '</h3>';
+						echo '<h3>' . get_field( 'favourites_heading' ) . '</h3>';
 					}
 
 					// Relationship ACF Field
@@ -127,7 +126,7 @@ get_header();
 					}
 
 					if ( get_field( 'merch_heading' ) ) {
-						echo '<h3>' . get_field( 'merch_heading' ); '</h3>';
+						echo '<h3>' . get_field( 'merch_heading' ) . '</h3>';
 					}
 
 					// Display Merch Posts
