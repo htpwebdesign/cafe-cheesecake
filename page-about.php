@@ -70,7 +70,7 @@ get_header();
 						$url = get_field( 'read_more_button' );
 						if ( get_field( 'read_more_button' ) ) {
 							echo "<br>";
-							echo '<a href"' . $url . '" class="button">Locations</a>';
+							echo '<a href="' . $url . '" class="button">Locations</a>';
 						}
 
 						if ( get_field( 'join_our_team_heading' ) ) {
@@ -84,7 +84,7 @@ get_header();
 						$urljoin = get_field( 'join_our_team_button' );
 						if ( get_field( 'join_our_team_button' ) ) {
 							echo "<br>";
-							echo '<a href"' . $urljoin. '" class="button">Careers</a>';
+							echo '<a href="' . $urljoin. '" class="button">Careers</a>';
 						}
 
 						if ( get_field( 'join_our_team_image' ) ) {
