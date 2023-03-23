@@ -31,33 +31,25 @@ get_header();
 			
 				<div class="menu-container">
 				<?php
-                $ids_to_exclude = array();
-                $get_terms_to_exclude = get_terms(
-                    array(
-                        'fields' => 'ids',
-                        'slug' => array (
-                            'baked-cheesecakes', 'other-cakes', 'specialty-cheesecakes', 'coffee', 'specialty', 'tea'
-                        ),
-                        'taxonomy' => 'product_cat', 
-                    )
-                    );
-                if( !is_wp_error( $get_terms_to_exclude ) && count($get_terms_to_exclude) > 0){
-                    $ids_to_exclude = $get_terms_to_exclude; 
-                }
-
 				$terms = get_terms( 
 					array(
 						'taxonomy' => 'product_cat',
                         'order'      => 'ASC',
-                        'exclude' => $ids_to_exclude,
-                        'include_children' => false
-
+                        'parent' => 0,
 					) 
 				);
-				if ( $terms && ! is_wp_error( $terms ) ) {
-					foreach ( $terms as $term ) {
-						?>
-                        <div class="menu-category-container">
+				if ( $terms && ! is_wp_error( $terms ) ) { ?>
+                    <div class="menu-tab-btn-container">
+                    <?php
+					foreach ( $terms as $term ) { ?>
+                        <button class="menu-tab-btn" id="<?php echo esc_html($term->slug) ?>-tab-btn"><?php echo esc_html($term->name)?></button>
+                    <?php
+                    }
+                    ?> 
+                    </div>
+                    <?php
+                        foreach ($terms as $term) { ?>
+                        <section id="<?php echo esc_html($term->slug)?>-section" class="menu-category-container">
 						<h2><?php echo esc_html( $term->name ); ?></h2>
 						<?php
 						$args = array(
@@ -65,13 +57,6 @@ get_header();
 							'posts_per_page' => -1,
 							'order'          => 'ASC',
 							'orderby'        => 'title',
-							// 'tax_query'      => array (
-							// 	array (
-							// 		'taxonomy' => 'cafe-product-type',
-							// 		'field'    => 'slug',
-							// 		'terms'    => 'type-menu',
-                            //     ),
-							// ),
                             'tax_query'      => array (
 								array (
 									'taxonomy' => 'product_cat',
@@ -80,8 +65,8 @@ get_header();
                                 ), 	array (
 									'taxonomy' => 'cafe-product-type',
 									'field'    => 'slug',
-									'terms'    => 'type-shop', 
-                                    'operator' => 'NOT IN',
+									'terms'    => 'type-menu', 
+                                    'operator' => 'IN',
                                 ), 
 
 							),
@@ -97,19 +82,17 @@ get_header();
                                 ?>
                                 <article class="menu-item">
                                 <h3 class="menu-item-name"><?php the_title(); ?></h3> 
-                                <p class="menu-item-description"><?php the_content(); ?></p> 
+                                <div class="menu-item-description"><?php the_content(); ?></div> 
                                 <div class="menu-item-image-container" style="width: 150px;"><?php the_post_thumbnail(); ?></div> 
                                 </article>
                                 <?php
-                                
 								}
 							}
 							wp_reset_postdata(); ?>
-                            </div>
+                            </section>
                     <?php
 					}
 					?>
-
 					<?php
 				}
 				?>

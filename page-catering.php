@@ -108,6 +108,7 @@ get_header();
 				<?php
 				}
 			}
+			// gravity_forms() using id of the form
 			the_content(); ?>
 			<?php
 		endwhile; // End of the loop.
