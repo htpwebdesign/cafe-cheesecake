@@ -415,3 +415,11 @@ function cafe_cheesecake_rewrite_flush() {
     flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'cafe_cheesecake_rewrite_flush' );
+
+
+function cafeMapKey($api) {
+	$api['key'] = 'AIzaSyDCtkSmxg7p70EAdYwXMlLHDbnK4ZLuskI';
+	return $api;
+}
+
+add_filter( 'acf/fields/google_map/api', 'cafeMapKey');
