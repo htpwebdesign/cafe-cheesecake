@@ -34,15 +34,9 @@ get_header();
 						  <?php while( have_rows('carousel') ): the_row(); ?>
 							<li>
 							  <?php 
-									echo wp_get_attachment_image( get_sub_field( 'banner_image' ), 'medium', '',
-									array(''));
-								?>
-							</li>
-							<li>
-							  <?php the_sub_field('banner_heading'); ?>
-							</li>
-							<li>
-							  <?php the_sub_field('banner_description'); ?>
+									echo wp_get_attachment_image( get_sub_field( 'banner_image' ))?>
+							  <?php echo "<h2>" . get_sub_field('banner_heading') . "</h2>"; ?>
+							  <?php echo '<p>' . get_sub_field('banner_description') . '</p>'; ?>
 							</li>
 						  <?php endwhile; ?>
 						</ul>
@@ -53,7 +47,11 @@ get_header();
 						echo wp_get_attachment_image( get_field( 'arrow_icon' ), 'medium', '',
 						array(''));
 					}
+					?>
 
+					<section class="cheesecakes">
+					<article>
+					<?php
 					if ( get_field( 'our_cheesecakes_heading' ) ) {
 						echo '<h3>' . get_field( 'our_cheesecakes_heading' ) . '</h3>';
 					}
@@ -64,10 +62,17 @@ get_header();
 
 					$url = get_field( 'our_cheesecakes_read_more' );
 						if ( get_field( 'our_cheesecakes_read_more' ) ) {
-							echo "<br>";
 							echo '<a href="' . $url . '" class="button">Read More</a>';
 						}
 					
+						?>
+
+					</article>
+					</section>
+
+					<section class="favourites">
+					<article>
+					<?php
 					if ( get_field( 'favourites_heading' ) ) {
 						echo '<h3>' . get_field( 'favourites_heading' ) . '</h3>';
 					}
@@ -94,15 +99,20 @@ get_header();
 					// See Menu Button
 					$urlfave = get_field( 'favourites_button' );
 					if ( get_field( 'favourites_button' ) ) {
-						echo "<br>";
 						echo '<a href="' . $urlfave . '" class="button">See Menu</a>';
 					}
+					?>
+				</article>
+				</section>
+
+				<section class="drinks">
+				<article>
+					<?php
 
 					if ( get_field( 'drinks_title' ) ) {
-						echo '<h3>' . get_field( 'drinks_title' ); '</h3>';
+						echo '<h3>' . get_field( 'drinks_title' ) . '</h3>';
 					}
 
-					echo "<br>";
 
 					
 					$parent_category_slug = 'drinks';
@@ -113,15 +123,14 @@ get_header();
 						$term = get_term_by('id', $child_category, 'product_cat');
 						$thumbnail_id = get_term_meta($child_category, 'thumbnail_id', true);
 
-						echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a><br>';
-						echo '<a href="' . get_term_link($term) . '">' . wp_get_attachment_image($thumbnail_id, 'thumbnail') . '</a><br>';
+						echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+						echo '<a href="' . get_term_link($term) . '">' . wp_get_attachment_image($thumbnail_id, 'thumbnail') . '</a>';
 
 					}
 
 					// See Menu Button
 					$urldrinks = get_field( 'drinks_button' );
 					if ( get_field( 'drinks_button' ) ) {
-						echo "<br>";
 						echo '<a href="' . $urldrinks . '" class="button">See Menu</a>';
 					}
 
@@ -129,6 +138,13 @@ get_header();
 						echo '<h3>' . get_field( 'merch_heading' ) . '</h3>';
 					}
 
+					?>
+				</article>
+				</section>
+
+				<section class="merch">
+				<article>
+					<?php
 					// Display Merch Posts
 					$argsMerch = array(
 						'post_type' 		=> 'product',
@@ -165,15 +181,17 @@ get_header();
 					}
 							
 					
+					
 					$urlmerch = get_field( 'merch_section_button' );
 					if ( get_field( 'merch_section_button' ) ) {
-						echo "<br>";
 						echo '<a href="' . $urlmerch . '" class="button">Our Shop</a>';
 					}
 
 				  }
 
 				?>
+				</article>
+				</section>
 				</section>
 		<?php
 		endwhile; // End of the loop.

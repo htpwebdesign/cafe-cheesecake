@@ -26,6 +26,7 @@ get_header();
 				</header>
 
 				<div class="entry-content">
+					<section class="company-info">
 					<?php
 					the_content();
 
@@ -37,15 +38,22 @@ get_header();
 						}
 				
 						if ( get_field( 'company_heading' ) ) {
-							echo '<h2>' . the_field( 'company_heading' ) . '</h2>';
+							echo '<h2>' . get_field( 'company_heading' ) . '</h2>';
 						}
 						
 						if ( get_field( 'company_background' ) ) {
-							echo '<p>' . the_field( 'company_background' ) . '</p>';
+							echo '<p>' . get_field( 'company_background' ) . '</p>';
 						}
 
+						?>
+
+					</section>
+
+					<section class="founder-info">
+					<?php
+
 						if ( get_field( 'founder_heading' ) ) {
-							echo '<h2>' . the_field( 'founder_heading' ) . '</h2>';
+							echo '<h2>' . get_field( 'founder_heading' ) . '</h2>';
 						}
 
 						if ( get_field( 'founder_image' ) ) {
@@ -62,6 +70,12 @@ get_header();
 							echo '<p>' . get_field( 'founder_bio' ) . '</p>';
 						}
 
+					?>
+					</section>
+
+					<section class="locations-info">
+					<?php
+
 						if ( get_field( 'our_locations_heading' ) ) {
 							echo '<h3>' . get_field( 'our_locations_heading' ) . '</h3>';
 						}
@@ -69,9 +83,15 @@ get_header();
 
 						$url = get_field( 'read_more_button' );
 						if ( get_field( 'read_more_button' ) ) {
-							echo "<br>";
 							echo '<a href="' . $url . '" class="button">Locations</a>';
 						}
+
+					?>
+					</section>
+
+					<section class="join-us-info">
+					
+					<?php
 
 						if ( get_field( 'join_our_team_heading' ) ) {
 							echo '<h3>' . get_field( 'join_our_team_heading' ) . '</h3>';
@@ -83,7 +103,6 @@ get_header();
 
 						$urljoin = get_field( 'join_our_team_button' );
 						if ( get_field( 'join_our_team_button' ) ) {
-							echo "<br>";
 							echo '<a href="' . $urljoin. '" class="button">Careers</a>';
 						}
 
@@ -91,6 +110,11 @@ get_header();
 							echo wp_get_attachment_image( get_field( 'join_our_team_image' ), 'medium', '',
 							array(''));
 						}
+					?>
+
+					</section>
+
+					<?php
 
 					}
 					
