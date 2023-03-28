@@ -30,7 +30,7 @@ get_header();
 			if ( $terms && ! is_wp_error( $terms ) ) {
 				foreach ( $terms as $term ) {
 					?>
-					<div class="location-container">
+					<section class="location-container">
 
 					<h2 class="location-name"><?php echo esc_html( $term->name ); ?></h2>
 					<?php
@@ -55,17 +55,17 @@ get_header();
 								$query -> the_post();
 								if ( function_exists( 'get_field' ) ) {
 								?>
-								<div class="position-container">
+								<article class="position-container">
                                 <h3 class="position-title"><?php the_title(); ?></h3> 
                                 <p class="position-description"><?php the_field('position_description'); ?></p> 
-								</div>
+								</article>
                                 <?php
 								}
 							}
 							wp_reset_postdata();
 						}
 						?>
-					</div>
+					</section>
 						<?php
 					}
 				};
