@@ -405,3 +405,19 @@ function cafeMapKey($api) {
 }
 
 add_filter( 'acf/fields/google_map/api', 'cafeMapKey');
+
+// Adds taxonomy terms when user adds new location 
+
+function cafe_send_new_post($new_status, $old_status, $post) {
+	if('publish' === $new_status && 'publish' !== $old_status && $post->post_type === 'cafe-location') {
+		$term = term_exists( $post->post_title, 'cafe-location-type' ); // Checks if the term is already in the taxonomy
+		if ( $term == 0 || $term == null ){ // If the term isnt in the taxonomy 
+			wp_insert_term(
+					$post->post_title,   // the term 
+					'cafe-location-type' // the taxonomy
+				);
+		}
+	}
+  }
+
+add_action('transition_post_status', 'cafe_send_new_post', 10, 3);
