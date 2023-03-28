@@ -39,34 +39,28 @@ get_header();
 							<?php
 							echo wp_get_attachment_image( get_field( 'location_image' ), 'medium', '',
 								array(''));
-
 						}
 					}
 					wp_reset_postdata();
 					echo '</section>';
 				}
-
-				echo '<section class="googlemaps-container">';
-					if( have_rows('all_location_map') ): ?>
- 					<div class="acf-map" data-zoom="16">
- 						<?php while ( have_rows('all_location_map') ) : the_row();
- 							
+				if( have_rows('all_location_map') ): ?>
+					<div class="acf-map" data-zoom="16">
+						<?php while ( have_rows('all_location_map') ) : the_row(); 
+				
 							// Load sub field values.
- 							$location = get_sub_field('location');
- 							$title = get_sub_field('title');
- 							$description = get_sub_field('description');
- 							?>
- 							<div class="marker" data-lat="<?php echo esc_attr($location['lat']);
-				?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+							$location = get_sub_field('location');
+							$title = get_sub_field('title');
+							$description = get_sub_field('description');
+							?>
+							<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
 								<h3><?php echo esc_html( $title ); ?></h3>
- 								<p><em><?php echo esc_html( $location['address'] ); ?></em></p>
- 								<p><?php echo esc_html( $description ); ?></p>
- 							</div>
- 						<?php endwhile; ?>
- 						</div>
-				<?php endif;
-
-				echo '</section>';
+								<p><em><?php echo esc_html( $location['address'] ); ?></em></p>
+								<p><?php echo esc_html( $description ); ?></p>
+							</div>
+					<?php endwhile; ?>
+					</div>
+				<?php endif; 
 			?>
 	</main><!-- #main -->
 
