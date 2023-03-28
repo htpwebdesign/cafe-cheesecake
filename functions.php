@@ -272,10 +272,10 @@ function cafe_cheesecake_register_custom_post_types() {
 
 	// Register Location CPT
 	$labels = array(
-		'name'                  => _x( 'Locations', 'post type general name' ),
+		'name'                  => _x( 'Location', 'post type general name' ),
 		'singular_name'         => _x( 'Location', 'post type singular name'),
-		'menu_name'             => _x( 'Locations', 'admin menu' ),
-		'name_admin_bar'        => _x( 'Locations', 'add new on admin bar' ),
+		'menu_name'             => _x( 'Location', 'admin menu' ),
+		'name_admin_bar'        => _x( 'Location', 'add new on admin bar' ),
 		'add_new'               => _x( 'Add New', 'location' ),
 		'add_new_item'          => __( 'Add New Location' ),
 		'new_item'              => __( 'New Location' ),
@@ -308,7 +308,7 @@ function cafe_cheesecake_register_custom_post_types() {
 		'show_in_admin_bar'  => true,
 		'show_in_rest'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'locations' ),
+		'rewrite'            => array( 'slug' => 'location' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
@@ -317,7 +317,7 @@ function cafe_cheesecake_register_custom_post_types() {
 		'supports'           => array( 'title', 'editor' ),
 	);
  
-	register_post_type( 'cafe-locations', $args );
+	register_post_type( 'cafe-location', $args );
 
 };
 
@@ -385,7 +385,7 @@ function cafe_cheesecake_register_taxonomies() {
         'rewrite'               => array( 'slug' => 'location-type' ),
     );
 
-    register_taxonomy( 'cafe-location-type', array( 'cafe-jobs', 'cafe-locations' ), $args );
+    register_taxonomy( 'cafe-location-type', array( 'cafe-jobs', 'cafe-location' ), $args );
 }
 add_action( 'init', 'cafe_cheesecake_register_taxonomies');
 
