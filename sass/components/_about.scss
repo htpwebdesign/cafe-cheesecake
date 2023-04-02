@@ -17,32 +17,24 @@ article#post-78 {
     article#post-78{
         section.company-info-container {
             section.company-info{
-                display: grid;
-                grid-template-columns: 60rem;
-                justify-content: center;
+                @include page-grid-layout;
             }
         }
         section.founder-info-container {
             section.founder-info {
-                display: grid;
-                grid-template-columns: 60rem;
-                justify-content: center;
+                @include page-grid-layout;
             }
         }
 
         section.locations-info-container {
             section.locations-info {
-                display: grid;
-                grid-template-columns: 60rem;
-                justify-content: center;
+                @include page-grid-layout;
             }
         }
 
         section.join-us-info-container {
             section.join-is-info {
-                display: grid;
-                grid-template-columns: 60rem;
-                justify-content: center;
+                @include page-grid-layout;
             }
         }
     }

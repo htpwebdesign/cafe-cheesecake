@@ -9,3 +9,10 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+// Main grid layout
+@mixin page-grid-layout {
+	display: grid;
+	grid-template-columns: 60rem;
+	justify-content: center;
+}

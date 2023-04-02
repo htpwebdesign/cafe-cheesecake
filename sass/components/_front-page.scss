@@ -1,0 +1,29 @@
+@import 'abstracts/abstracts';
+
+
+@media (min-width: 60rem) {
+    body.page-id-42 {
+        section.home-blog {
+            section.cheesecakes-container {
+                section.cheesecakes {
+                    @include page-grid-layout;
+                }
+            }
+            section.favourites-container {
+                section.favourites {
+                    @include page-grid-layout;
+                }
+            }
+            section.drinks-container {
+                section.drinks {
+                    @include page-grid-layout;
+                }
+            }
+            section.merch-container {
+                section.merch {
+                    @include page-grid-layout;
+                }
+            }
+        }
+    }
+}
