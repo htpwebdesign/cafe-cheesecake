@@ -1,0 +1,11 @@
+@import 'abstracts/abstracts';
+
+@media (min-width: 60rem) {
+    body.page-id-67 {
+        section.menu-container {
+            section.menu {
+                @include page-grid-layout;
+            }
+        }
+    }
+}

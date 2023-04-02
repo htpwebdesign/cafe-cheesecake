@@ -1,0 +1,22 @@
+@import 'abstracts/abstracts';
+
+
+@media (min-width: 60rem) {
+    body.page-id-69 {
+        section.catering-container {
+            section.catering {
+                @include page-grid-layout;
+            }
+        }
+        section.faq-container {
+            section.faq {
+                @include page-grid-layout;
+            }
+        }
+        section.catering-form-container {
+            section.catering-form {
+                @include page-grid-layout;
+            }
+        }
+    }
+}

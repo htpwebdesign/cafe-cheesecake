@@ -16,12 +16,9 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<section class="outer-container">
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
-
-		
 
 		<?php
 		while ( have_posts() ) :
@@ -40,33 +37,36 @@ get_header();
 			
 			if ( $query -> have_posts() ){
 				?>
-				<div class="catering-container">
-				<?php
-				while ( $query -> have_posts() ) {
-					$query -> the_post();
-					if ( function_exists( 'get_field' ) ) {
-						echo '<article class="catering-options">';
-						if ( get_field( 'service_type_title' ) ) {
-							echo '<h3 id="'. esc_attr( get_the_ID() ) . '">' . esc_html( get_the_title() ) .'</h3>';
-							?>
-							<p class="catering-option-description"> 
-							<?php
-							the_field( 'service_type_description'); ?>
-							</p>
-							<?php
-						}
-						echo '</article>';
-						}
-					} 
-				}
-				?>
-				</div>
+				<section class="catering-container">
+					<section class=catering>
+					<?php
+					while ( $query -> have_posts() ) {
+						$query -> the_post();
+						if ( function_exists( 'get_field' ) ) {
+							echo '<article class="catering-options">';
+							if ( get_field( 'service_type_title' ) ) {
+								echo '<h3 id="'. esc_attr( get_the_ID() ) . '">' . esc_html( get_the_title() ) .'</h3>';
+								?>
+								<p class="catering-option-description"> 
+								<?php
+								the_field( 'service_type_description'); ?>
+								</p>
+								<?php
+							}
+							echo '</article>';
+							}
+						} 
+					}
+					?>
+					</section>
+				</section>
 				<?php
 				wp_reset_postdata();
 	
 			?>
 			<!-- output faq -->
 			<section class="faq-container">
+				<section class=faq>
 				<?php
 				if ( have_rows( 'faq_section' )):
 						$myArray = get_field_object( 'faq_section'); ?>
@@ -95,22 +95,27 @@ get_header();
 					<?php
 				endif;
 				?>
+				</section>
 			</section>
-			<?php
-			if ( function_exists( 'get_field' ) ) {
-				if ( get_field( 'catering_inquiry_form_heading' ) ) { ?>
-					<h2 class="catering-inquiry-form-heading">
+
+			<section class="catering-form-container">
+				<section class="catering-form">
 				<?php
-					echo get_field('catering_inquiry_form_heading'); ?>
-					</h2>
-				<?php
+				if ( function_exists( 'get_field' ) ) {
+					if ( get_field( 'catering_inquiry_form_heading' ) ) { ?>
+						<h2 class="catering-inquiry-form-heading">
+					<?php
+						echo get_field('catering_inquiry_form_heading'); ?>
+						</h2>
+					<?php
+					}
 				}
-			}
-			the_content(); ?>
-			<?php
-		endwhile; // End of the loop.
-		?>
-	</section>
+				the_content(); ?>
+				<?php
+				endwhile; // End of the loop.
+				?>
+				</section>
+			</section>
 	</main><!-- #main -->
 
 <?php

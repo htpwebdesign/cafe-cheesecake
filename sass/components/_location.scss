@@ -1,0 +1,15 @@
+@import 'abstracts/abstracts';
+
+
+@media (min-width: 60rem) {
+    body.post-type-archive-cafe-location {
+        section.locations-container {
+            section.locations{
+                @include page-grid-layout;
+            }
+        }
+        section.google-maps-container {
+            @include page-grid-layout;
+        }
+    }
+}

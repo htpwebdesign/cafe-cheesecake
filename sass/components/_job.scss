@@ -1,0 +1,12 @@
+@import 'abstracts/abstracts';
+
+
+@media (min-width: 60rem) {
+    body.post-type-archive-cafe-jobs {
+        section.location-container {
+            section.location {
+                @include page-grid-layout;
+            }
+        }
+    }
+}
