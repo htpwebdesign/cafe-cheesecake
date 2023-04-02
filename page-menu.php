@@ -74,10 +74,11 @@ get_header();
 							if ( $query -> have_posts() ){
 								while ( $query -> have_posts() ) {
 									$query -> the_post();
+									global $product;
 									?>
 									<article class="menu-item">
 									<h3 class="menu-item-name"><?php the_title(); ?></h3> 
-									<div class="menu-item-description"><?php the_content(); ?></div> 
+									<div class="menu-item-description"><?php echo $product->short_description ; ?></div> 
 									<div class="menu-item-image-container" style="width: 150px;"><?php the_post_thumbnail(); ?></div> 
 									</article>
 									<?php
