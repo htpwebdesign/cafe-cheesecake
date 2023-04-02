@@ -1,0 +1,49 @@
+@import 'abstracts/abstracts';
+
+article#post-78 {
+
+    section.company-info-container {
+        background-color: $yellow;
+        section.company-info {
+            img {
+                max-height: 20rem;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 60rem) {
+    article#post-78{
+        section.company-info-container {
+            section.company-info{
+                display: grid;
+                grid-template-columns: 60rem;
+                justify-content: center;
+            }
+        }
+        section.founder-info-container {
+            section.founder-info {
+                display: grid;
+                grid-template-columns: 60rem;
+                justify-content: center;
+            }
+        }
+
+        section.locations-info-container {
+            section.locations-info {
+                display: grid;
+                grid-template-columns: 60rem;
+                justify-content: center;
+            }
+        }
+
+        section.join-us-info-container {
+            section.join-is-info {
+                display: grid;
+                grid-template-columns: 60rem;
+                justify-content: center;
+            }
+        }
+    }
+}

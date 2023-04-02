@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		<section class="outer-container">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -101,7 +101,7 @@ get_header();
         <?php
 		endwhile; // End of the loop.
 		?>
-
+		</section>
 	</main><!-- #main -->
 
 <?php

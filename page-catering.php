@@ -16,6 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		<section class="outer-container">
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
@@ -109,7 +110,7 @@ get_header();
 			<?php
 		endwhile; // End of the loop.
 		?>
-
+	</section>
 	</main><!-- #main -->
 
 <?php

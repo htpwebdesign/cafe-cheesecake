@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+	<main id="primary" class="site-main">	
+		<section class="outer-container">
 			<header class="page-header">
 				<?php
 				post_type_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -71,7 +71,7 @@ get_header();
 				};
 			?>
 			</div>
-
+		</section>
 	</main><!-- #main -->
 
 <?php

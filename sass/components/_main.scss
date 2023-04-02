@@ -1,0 +1,16 @@
+@import 'abstracts/abstracts';
+
+main.site-main {
+    background-color: $bg-color;
+    font-family: $roboto;
+    color: $text-color;
+    text-align: center;
+
+    h1 {
+        font-family: $abril;
+    }
+
+    section{
+        padding: 1rem;
+    }
+}
