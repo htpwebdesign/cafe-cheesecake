@@ -1,15 +1,56 @@
 @import 'abstracts/abstracts';
+body.post-type-archive-cafe-location {
+    section.locations-container {
+        section.locations{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            section.location-single {
+                max-width: 20rem;
+                margin: 1rem .5rem;
+                padding-bottom: 1rem;
 
+                h2, p {
+                    text-align: left;
+                }
+
+                img {
+                    height: 15rem;
+                    max-width: 100%;
+                    object-fit: cover;
+                }
+
+            }
+        }
+    }
+
+    section.google-maps-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 5rem;
+        
+        div.acf-map {
+            outline: $blue solid 5px;
+            border-radius: 7px 7px;
+            width: 60rem;
+            height: 30rem;
+        }
+    }
+}
 
 @media (min-width: 60rem) {
     body.post-type-archive-cafe-location {
         section.locations-container {
+            display: grid;
+            grid-template-columns: 65rem;
+            justify-content:center;
             section.locations{
-                @include page-grid-layout;
+                
             }
         }
         section.google-maps-container {
-            @include page-grid-layout;
+            // @include page-grid-layout;
         }
     }
 }

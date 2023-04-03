@@ -10,7 +10,6 @@ article#post-78 {
         }
     }
     section.founder-info-container {
-        background-color: $yellow;
         padding: 4rem 0 2rem 0;
         section.founder-info {
             h3 {
@@ -28,7 +27,7 @@ article#post-78 {
     }
 
     section.locations-info-container {
-
+        background-color: $yellow;
         section.locations-info {
             padding-bottom: 3rem;
             a.button {

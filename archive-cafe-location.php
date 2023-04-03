@@ -28,8 +28,8 @@ get_header();
 
 					$query = new WP_Query($args);
 					if($query -> have_posts()){
-						echo '<section class="location-single">';
 						while($query -> have_posts()){
+							echo '<section class="location-single">';
 							$query -> the_post();
 		
 							if ( function_exists( 'get_field' ) ) {
@@ -38,12 +38,13 @@ get_header();
 								<p><?php echo the_field('location_information'); ?></p>	
 								
 								<?php
-								echo wp_get_attachment_image( get_field( 'location_image' ), 'medium', '',
+								echo wp_get_attachment_image( get_field( 'location_image' ), '',
 									array(''));
 							}
+							echo '</section>';
 						}
 						wp_reset_postdata();
-						echo '</section>';
+						
 					}
 					echo '</section>';
 				echo '</section>';
