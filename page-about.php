@@ -92,8 +92,13 @@ get_header();
 
 					<section class="join-us-info-container">
 						<section class="join-us-info">	
-							<div class="join-us-content">	
+							
 						<?php
+							if ( get_field( 'join_our_team_image' ) ) {
+							echo wp_get_attachment_image( get_field( 'join_our_team_image' ), 'medium', '',
+							array(''));
+							
+							echo '<div class="join-us-content">';
 							if ( get_field( 'join_our_team_heading' ) ) {
 								echo '<h3>' . get_field( 'join_our_team_heading' ) . '</h3>';
 							}
@@ -107,10 +112,6 @@ get_header();
 								echo '<a href="' . $urljoin. '" class="button">Careers</a>';
 							}
 							echo '</div>';
-
-							if ( get_field( 'join_our_team_image' ) ) {
-								echo wp_get_attachment_image( get_field( 'join_our_team_image' ), 'medium', '',
-								array(''));
 							}
 						?>
 						</section>
