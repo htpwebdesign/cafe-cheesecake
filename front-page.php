@@ -170,12 +170,14 @@ get_header();
 									$queryMerch->the_post(); 
 									global $product;
 									?>
-								
+
+									<div class="single-merch">
 										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail(); ?>
 											<h3><?php the_title(); ?></h3>
 											<?php echo $product->get_price_html(); ?>
 										</a>
+									</div>
 									<?php			
 								}
 								wp_reset_postdata();
