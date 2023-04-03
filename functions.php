@@ -108,6 +108,11 @@ function cafe_cheesecake_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	// Remove sidebar from shop page
+
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
 }
 add_action( 'after_setup_theme', 'cafe_cheesecake_setup' );
 
@@ -437,3 +442,7 @@ function cafe_send_new_post($new_status, $old_status, $post) {
   }
 
 add_action('transition_post_status', 'cafe_send_new_post', 10, 3);
+
+
+
+
