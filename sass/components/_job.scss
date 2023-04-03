@@ -1,5 +1,17 @@
 @import 'abstracts/abstracts';
 
+body.post-type-archive-cafe-jobs {
+    section.location-container {
+        text-align: left;
+
+        section.location {
+            h2 {
+                font-family: $bungee;
+            }
+        }
+    }
+    
+}
 
 @media (min-width: 60rem) {
     body.post-type-archive-cafe-jobs {
