@@ -27,27 +27,7 @@ get_header();
 				</header>
 
 				<div class="about-entry-content">
-					<section class="company-info-container">
-						<section class="company-info">
-						<?php
-						the_content();
-						if ( function_exists ( 'get_field' ) ) {
-		
-							if ( get_field( 'company_image' ) ) {
-								echo wp_get_attachment_image( get_field( 'company_image' ), 'medium', '',
-								array(''));
-							}
-					
-							if ( get_field( 'company_heading' ) ) {
-								echo '<h2>' . get_field( 'company_heading' ) . '</h2>';
-							}
-							
-							if ( get_field( 'company_background' ) ) {
-								echo '<p>' . get_field( 'company_background' ) . '</p>';
-							}
-							?>
-						</section>
-					</section>
+				
 
 					<section class="founder-info-container">
 						<section class="founder-info">
@@ -78,9 +58,8 @@ get_header();
 						<?php
 
 							if ( get_field( 'our_locations_heading' ) ) {
-								echo '<h3>' . get_field( 'our_locations_heading' ) . '</h3>';
+								echo '<h2>' . get_field( 'our_locations_heading' ) . '</h2>';
 							}
-
 
 							$url = get_field( 'read_more_button' );
 							if ( get_field( 'read_more_button' ) ) {
@@ -90,17 +69,40 @@ get_header();
 						</section>
 					</section>
 
+					<section class="company-info-container">
+						<section class="company-info">
+						<?php
+						the_content();
+						if ( function_exists ( 'get_field' ) ) {
+		
+							if ( get_field( 'company_image' ) ) {
+								echo wp_get_attachment_image( get_field( 'company_image' ), 'medium', '',
+								array(''));
+							}
+					
+							if ( get_field( 'company_heading' ) ) {
+								echo '<h2>' . get_field( 'company_heading' ) . '</h2>';
+							}
+							
+							if ( get_field( 'company_background' ) ) {
+								echo '<p>' . get_field( 'company_background' ) . '</p>';
+							}
+							?>
+						</section>
+					</section>
+
 					<section class="join-us-info-container">
 						<section class="join-us-info">	
 							
 						<?php
-							if ( get_field( 'join_our_team_image' ) ) {
-							echo wp_get_attachment_image( get_field( 'join_our_team_image' ), 'medium', '',
-							array(''));
+							// if ( get_field( 'join_our_team_image' ) ) {
+							// echo wp_get_attachment_image( get_field( 'join_our_team_image' ), 'medium', '',
+							// array(''));
+							// }
 							
 							echo '<div class="join-us-content">';
 							if ( get_field( 'join_our_team_heading' ) ) {
-								echo '<h3>' . get_field( 'join_our_team_heading' ) . '</h3>';
+								echo '<h2>' . get_field( 'join_our_team_heading' ) . '</h2>';
 							}
 
 							if ( get_field( 'join_our_team_description' ) ) {
@@ -112,7 +114,7 @@ get_header();
 								echo '<a href="' . $urljoin. '" class="button">Careers</a>';
 							}
 							echo '</div>';
-							}
+							
 						?>
 						</section>
 					</section>

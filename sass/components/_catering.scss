@@ -1,21 +1,87 @@
 @import 'abstracts/abstracts';
 
+body.page-id-69 {
+    section.catering-container {
+        
+        section.catering {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
 
-@media (min-width: 60rem) {
+            article.catering-options {
+                max-width: 18rem;
+                margin: 0 1.5rem;
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    section.faq-container {
+        margin: 0 0 2rem 0;
+        section.faq {
+            h2 {
+                margin: 0 0 2rem 0;
+                font-size: 2rem;
+            }
+            article.individual-faq-container {
+                text-align: left; 
+                margin: 1rem 0;
+                background-color: white;
+                border: $text-color solid 2px;
+                border-radius: 20px 20px;
+
+                summary.faq-question {
+                    
+                    padding: 1rem;
+                }
+
+                div.faq-answer {
+                    border-top: $text-color solid 2px;
+                    padding: 1rem 1.5rem;
+                }
+            }
+        }
+    }
+
+    section.catering-form-container {
+        background-color: $yellow;
+        section.catering-form {
+            text-align: left;
+
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 65rem) {
     body.page-id-69 {
         section.catering-container {
+            @include page-grid-layout;
             section.catering {
-                @include page-grid-layout;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
             }
         }
         section.faq-container {
+            @include page-grid-layout;
             section.faq {
-                @include page-grid-layout;
+                
             }
         }
         section.catering-form-container {
+            display: grid;
+            grid-template-columns: 40rem;
+            justify-content:center;
+            align-items: center;
             section.catering-form {
-                @include page-grid-layout;
+                
             }
         }
     }

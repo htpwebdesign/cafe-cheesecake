@@ -84,7 +84,7 @@ body.page-id-67 {
                 }
                 div.menu-category-grid-container {
                     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                    grid-gap: 1rem;
+                    grid-gap: 2rem;
                     display: grid !important;
                 }
             }
@@ -108,11 +108,11 @@ body.page-id-67 {
     }
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 70rem) {
     body.page-id-67 {
         section.menu-container {
             section.menu {
-                @include page-grid-layout;
+                @include menu-grid-layout;
             }
         }
     }

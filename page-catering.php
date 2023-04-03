@@ -45,7 +45,7 @@ get_header();
 						if ( function_exists( 'get_field' ) ) {
 							echo '<article class="catering-options">';
 							if ( get_field( 'service_type_title' ) ) {
-								echo '<h3 id="'. esc_attr( get_the_ID() ) . '">' . esc_html( get_the_title() ) .'</h3>';
+								echo '<h2 id="'. esc_attr( get_the_ID() ) . '">' . esc_html( get_the_title() ) .'</h2>';
 								?>
 								<p class="catering-option-description"> 
 								<?php
@@ -79,11 +79,11 @@ get_header();
 							while ( have_rows( 'faq_section' )) : the_row(); ?>
 							<article class="individual-faq-container">
 							<details>
-								<summary>
+								<summary class="faq-question">
 								<?php echo get_sub_field( 'faq_question' ); ?> 
 								</summary>
 							
-								<div>
+								<div class="faq-answer">
 								<?php echo get_sub_field( 'faq_answer' ); ?> 
 								</div>
 							</details>
