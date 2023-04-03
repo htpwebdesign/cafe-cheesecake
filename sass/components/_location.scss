@@ -28,7 +28,8 @@ body.post-type-archive-cafe-location {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding-bottom: 5rem;
+        padding: 3rem 0;
+        background-color: $blue;
         
         div.acf-map {
             outline: $blue solid 5px;
@@ -50,7 +51,6 @@ body.post-type-archive-cafe-location {
             }
         }
         section.google-maps-container {
-            // @include page-grid-layout;
         }
     }
 }
