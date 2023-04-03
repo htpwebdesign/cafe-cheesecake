@@ -1,29 +1,68 @@
-@import 'abstracts/abstracts';
+@import "abstracts/abstracts";
 
+.site-main {
+  
+  .home-blog {
+
+    .home-carousel {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+
+      li {
+        flex: 0 0 auto;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .favourites-container{
+    .favourites{
+      ul{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        
+        li{
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 2rem;
+          a{
+            img{
+              max-width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 @media (min-width: 60rem) {
-    body.page-id-42 {
-        section.home-blog {
-            section.cheesecakes-container {
-                section.cheesecakes {
-                    @include page-grid-layout;
-                }
-            }
-            section.favourites-container {
-                section.favourites {
-                    @include page-grid-layout;
-                }
-            }
-            section.drinks-container {
-                section.drinks {
-                    @include page-grid-layout;
-                }
-            }
-            section.merch-container {
-                section.merch {
-                    @include page-grid-layout;
-                }
-            }
+  body.page-id-42 {
+    section.home-blog {
+      section.cheesecakes-container {
+        section.cheesecakes {
+          @include page-grid-layout;
         }
+      }
+      section.favourites-container {
+        section.favourites {
+          @include page-grid-layout;
+        }
+      }
+      section.drinks-container {
+        section.drinks {
+          @include page-grid-layout;
+        }
+      }
+      section.merch-container {
+        section.merch {
+          @include page-grid-layout;
+        }
+      }
     }
+  }
 }

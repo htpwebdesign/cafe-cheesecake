@@ -55,6 +55,13 @@ function cafe_cheesecake_setup() {
 		)
 	);
 
+	// Carousel 
+	function enqueue_my_scripts() {
+		wp_enqueue_script('owl-carousel', get_stylesheet_directory_uri() . '/js/owl-carousel.js', array('jquery'), '1.0', true);
+	}
+	add_action('wp_enqueue_scripts', 'enqueue_my_scripts');
+	
+	
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.

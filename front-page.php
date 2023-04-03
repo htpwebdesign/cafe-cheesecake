@@ -28,7 +28,7 @@ get_header();
 					
 					// Repeater ACF Field
 					if( have_rows('carousel') ): ?>
-						<ul>
+						<ul class='home-carousel'>
 						  <?php while( have_rows('carousel') ): the_row(); ?>
 							<li>
 							  <?php 
