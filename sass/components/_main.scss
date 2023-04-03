@@ -8,9 +8,15 @@ main.site-main {
 
     h1 {
         font-family: $abril;
+        font-size: 3rem;
+        padding-top: 2rem;
     }
 
     section{
         padding: 1rem;
+    }
+
+    p {
+        line-height: 1.75;
     }
 }

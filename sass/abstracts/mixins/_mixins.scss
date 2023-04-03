@@ -14,5 +14,6 @@
 @mixin page-grid-layout {
 	display: grid;
 	grid-template-columns: 60rem;
-	justify-content: center;
+	justify-content:center;
+	align-items: center;
 }
