@@ -49,6 +49,7 @@ get_header();
 							foreach ($terms as $term) { ?>
 							<section id="<?php echo esc_html($term->slug)?>-section" class="menu-category-container">
 							<h2><?php echo esc_html( $term->name ); ?></h2>
+							<div class="menu-category-grid-container">
 							<?php
 							$args = array(
 								'post_type'      => 'product',
@@ -85,6 +86,7 @@ get_header();
 									}
 								}
 								wp_reset_postdata(); ?>
+								</div>
 								</section>
 						<?php
 						}
