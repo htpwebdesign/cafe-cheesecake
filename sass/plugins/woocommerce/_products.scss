@@ -1,60 +1,115 @@
+@import "abstracts/abstracts";
+
 ul.products {
-	margin: 0;
-	padding: 0;
+    margin: 2rem 0;
+    padding: 0;
 
-	li.product {
-		list-style: none;
-		position: relative;
-		margin-bottom: 2em;
-
-		img {
-			display: block;
-		}
-
-		.button {
-			display: block;
-		}
-	}
+    li.product {
+        list-style: none;
+        margin-bottom: 2rem;
+        a {
+            text-decoration: none;
+            display: block;
+            color: $text-color;
+        }
+    }
 }
 
-@media screen and (min-width: 48em) {
-
-	ul.products {
-
-		li.product {
-
-			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
-
-			&.first {
-				clear: both;
-			}
-
-			&.last {
-				margin-right: 0;
-			}
-		}
-	}
-
-	ul.products.columns-1 {
-
-		li.product {
-			float: none;
-			width: 100%;
-		}
-
-	}
-
-	@for $i from 2 through 6 {
-
-		ul.products.columns-#{$i} {
-
-			li.product {
-
-				@include column-width( $i );
-			}
-
-		}
-	}
+ul.page-numbers {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    li {
+        list-style: none;
+    }
 }
+
+@media (min-width: 32rem) {
+    ul.products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 1rem;
+
+        li.product {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (min-width: 60rem) {
+    body.post-type-archive-product {
+        main.site-main {
+            padding: 1rem;
+        }
+    }
+}
+
+@media (min-width: 80rem) {
+    body.post-type-archive-product {
+        main.site-main {
+            padding: 2rem;
+        }
+    }
+}
+
+@media (min-width: 100rem) {
+    body.post-type-archive-product {
+        main.site-main {
+            padding: 4rem;
+        }
+    }
+}
+
+// ul.products {
+//     margin: 0;
+//     padding: 0;
+
+//     li.product {
+//         list-style: none;
+//         position: relative;
+//         margin-bottom: 2em;
+
+//         img {
+//             display: block;
+//         }
+
+//         .button {
+//             display: block;
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 48em) {
+//     ul.products {
+//         li.product {
+//             @include column-width(3);
+//             float: left;
+//             margin-right: $columns__margin;
+
+//             &.first {
+//                 clear: both;
+//             }
+
+//             &.last {
+//                 margin-right: 0;
+//             }
+//         }
+//     }
+
+//     ul.products.columns-1 {
+//         li.product {
+//             float: none;
+//             width: 100%;
+//         }
+//     }
+
+//     @for $i from 2 through 6 {
+//         ul.products.columns-#{$i} {
+//             li.product {
+//                 @include column-width($i);
+//             }
+//         }
+//     }
+// }
