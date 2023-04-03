@@ -14,7 +14,7 @@ article#post-78 {
         }
     }
     section.founder-info-container {
-        background-color: $yellow;
+
         padding-top: 3rem;
         section.founder-info {
             h3 {
@@ -61,7 +61,7 @@ article#post-78 {
 
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 65rem) {
     article#post-78{
         section.company-info-container {
             @include page-grid-layout;
@@ -78,6 +78,7 @@ article#post-78 {
         section.founder-info-container {
             @include page-grid-layout;
             section.founder-info {
+                padding: 0 3rem;
             }
         }
 
@@ -96,6 +97,7 @@ article#post-78 {
             //    justify-content: space-between;
 
                 div.join-us-content {
+                    padding: 0 3rem;
                 }
             }
         }
