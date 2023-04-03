@@ -1,4 +1,112 @@
-@import 'abstracts/abstracts';
+@import "abstracts/abstracts";
+
+body.page-id-67 {
+    section.menu-container {
+        section.menu {
+            h2 {
+                font-family: $bungee;
+            }
+            div.menu-tab-btn-container {
+                display: flex;
+                flex-direction: column;
+                button.menu-tab-btn {
+                    background-color: $bg-color;
+                    border: 4px solid $coral;
+                    margin-bottom: 0.25rem;
+                    border-radius: 20px;
+                }
+                button.menu-tab-btn.current-menu-tab {
+                    border: 4px solid $blue;
+                }
+                button.menu-tab-btn:hover,
+                button.menu-tab-btn:focus {
+                    border: 4px solid $blue;
+                }
+            }
+            section.menu-category-container {
+                display: none;
+                article.menu-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    div.menu-item-description {
+                        margin-bottom: 0.5rem;
+                        order: 3;
+                    }
+                    div.menu-item-image-container {
+                        margin-bottom: 0.5rem;
+                        img {
+                            border: 5px solid $blue;
+                            max-width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+            section.menu-category-container.active {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width: 37.5rem) {
+    body.page-id-67 {
+        section.menu-container {
+            section.menu {
+                div.menu-tab-btn-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 1rem;
+                    button.menu-tab-btn {
+                        background-color: $bg-color;
+                        border: 4px solid $coral;
+                        margin-bottom: 0.25rem;
+                        border-radius: 20px;
+                    }
+                    button.menu-tab-btn:hover,
+                    button.menu-tab-btn:focus {
+                        border: 4px solid $blue;
+                    }
+                }
+                section.menu-category-container {
+                    article.menu-item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        div.menu-item-image-container {
+                            img {
+                                border: 5px solid $blue;
+                            }
+                        }
+                    }
+                }
+                div.menu-category-grid-container {
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    grid-gap: 1rem;
+                    display: grid !important;
+                }
+            }
+            img {
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@media (min-width: 48rem) {
+    body.page-id-67 {
+        div.menu-tab-btn-container {
+            display: flex;
+            flex-direction: row;
+            button.menu-tab-btn {
+                background-color: cornflowerblue;
+            }
+        }
+    }
+}
 
 @media (min-width: 60rem) {
     body.page-id-67 {

@@ -13,16 +13,22 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cafe-cheesecake' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'cafe-cheesecake' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'cafe-cheesecake' ), 'cafe-cheesecake', '<a href="http://underscores.me/">FWD 32</a>' );
+			<?php
+
+			// Get the social menu
+			if ( has_nav_menu( 'menu-3' ) ) {
+				wp_nav_menu( array(
+					'theme_location' => 'menu-3',
+				) );
+			}
+
+				// Get the footer menu
+				if ( has_nav_menu( 'menu-2' ) ) {
+					wp_nav_menu( array(
+						'theme_location' => 'menu-2',
+					) );
+				}
+				
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

@@ -50,9 +50,18 @@ function cafe_cheesecake_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'cafe-cheesecake' ),
+			'menu-2' => esc_html__( 'Footer', 'cafe-cheesecake'),
+			'menu-3' => esc_html__( 'Social', 'cafe-cheesecake')
 		)
 	);
 
+	// Carousel 
+	function enqueue_my_scripts() {
+		wp_enqueue_script('owl-carousel', get_stylesheet_directory_uri() . '/js/owl-carousel.js', array('jquery'), '1.0', true);
+	}
+	add_action('wp_enqueue_scripts', 'enqueue_my_scripts');
+	
+	
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
@@ -99,6 +108,11 @@ function cafe_cheesecake_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	// Remove sidebar from shop page
+
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
 }
 add_action( 'after_setup_theme', 'cafe_cheesecake_setup' );
 
@@ -124,6 +138,8 @@ function cafe_cheesecake_scripts() {
 	wp_style_add_data( 'cafe-cheesecake-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'cafe-cheesecake-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'cafe-cheesecake-script', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
 
 	// if(is_post_type_archive('location')){
 		wp_enqueue_script('google_map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDCtkSmxg7p70EAdYwXMlLHDbnK4ZLuskI');
@@ -426,3 +442,7 @@ function cafe_send_new_post($new_status, $old_status, $post) {
   }
 
 add_action('transition_post_status', 'cafe_send_new_post', 10, 3);
+
+
+
+
