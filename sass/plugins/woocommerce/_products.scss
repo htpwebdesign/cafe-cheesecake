@@ -1,5 +1,20 @@
 @import "abstracts/abstracts";
 
+form.woocommerce-ordering {
+    select {
+        font-family: $roboto;
+        padding: 0.25rem;
+        border: 2px solid $blue;
+        outline: none;
+    }
+    select:focus {
+        border: 2px solid $coral;
+    }
+    select:active {
+        border: 2px solid $coral;
+    }
+}
+
 ul.products {
     margin: 2rem 0;
     padding: 0;
