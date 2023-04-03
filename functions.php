@@ -50,6 +50,8 @@ function cafe_cheesecake_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'cafe-cheesecake' ),
+			'menu-2' => esc_html__( 'Footer', 'cafe-cheesecake'),
+			'menu-3' => esc_html__( 'Social', 'cafe-cheesecake')
 		)
 	);
 

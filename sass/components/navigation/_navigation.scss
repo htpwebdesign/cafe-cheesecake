@@ -93,7 +93,7 @@
 
     .main-navigation {
       .sub-menu {
-        display: block;		
+        display: block;
       }
 
       ul {
@@ -124,5 +124,26 @@
   .nav-next {
     text-align: end;
     flex: 1 0 50%;
+  }
+}
+
+.site-footer {
+  .site-info {
+    display: flex;
+    justify-content: space-evenly;
+
+    .menu-footer-menu-container {
+      display: block;
+
+      ul {
+        list-style: none;
+        text-decoration: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0;
+        padding: 0;
+
+      }
+    }
   }
 }
