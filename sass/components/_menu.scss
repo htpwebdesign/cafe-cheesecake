@@ -1,5 +1,49 @@
 @import "abstracts/abstracts";
 
+body.page-id-67 {
+    section.menu-container {
+        section.menu {
+            div.menu-tab-btn-container {
+                display: flex;
+                flex-direction: column;
+                button.menu-tab-btn {
+                    background-color: $bg-color;
+                    border: 2px solid $coral;
+                    margin-bottom: 0.25rem;
+                    border-radius: 20px;
+                }
+                button.menu-tab-btn:hover,
+                button.menu-tab-btn:focus {
+                    border: 2px solid $blue;
+                }
+            }
+            section.menu-category-container {
+                article.menu-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    img {
+        max-width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 37.5rem) {
+    body.page-id-67 {
+        div.menu-tab-btn-container {
+            display: flex;
+            flex-direction: row;
+            button.menu-tab-btn {
+                background-color: cornflowerblue;
+            }
+        }
+    }
+}
+
 @media (min-width: 60rem) {
     body.page-id-67 {
         section.menu-container {
