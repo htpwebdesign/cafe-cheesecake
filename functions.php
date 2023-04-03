@@ -127,6 +127,8 @@ function cafe_cheesecake_scripts() {
 
 	wp_enqueue_script( 'cafe-cheesecake-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+	wp_enqueue_script( 'cafe-cheesecake-script', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
+
 	// if(is_post_type_archive('location')){
 		wp_enqueue_script('google_map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDCtkSmxg7p70EAdYwXMlLHDbnK4ZLuskI');
 		wp_enqueue_script('cafe-cheesecake-google_map', get_template_directory_uri() . '/js/google_map.js', array(), _S_VERSION, true );
