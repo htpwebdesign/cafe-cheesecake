@@ -2,6 +2,10 @@
 
 article#post-78 {
 
+    h1 {
+        margin-bottom: 0;
+    }
+
     section.company-info-container {
         section.company-info {
             p {
@@ -10,7 +14,8 @@ article#post-78 {
         }
     }
     section.founder-info-container {
-        padding: 4rem 0 2rem 0;
+
+        padding-top: 3rem;
         section.founder-info {
             h3 {
                 margin-bottom: 0;
@@ -27,9 +32,8 @@ article#post-78 {
     }
 
     section.locations-info-container {
-        background-color: $yellow;
+        padding-top: 2rem;
         section.locations-info {
-            padding-bottom: 3rem;
             a.button {
                 text-decoration: none;
                 padding: .75rem 1rem;
@@ -42,7 +46,7 @@ article#post-78 {
     }
 
     section.join-us-info-container {
-
+        background-color: $yellow;
         section.join-us-info {
             padding-bottom: 3rem;
             a.button {
@@ -58,7 +62,7 @@ article#post-78 {
 
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 65rem) {
     article#post-78{
         section.company-info-container {
             @include page-grid-layout;
@@ -75,7 +79,7 @@ article#post-78 {
         section.founder-info-container {
             @include page-grid-layout;
             section.founder-info {
-                padding: 0 2rem;
+                padding: 0 3rem;
             }
         }
 
@@ -89,12 +93,12 @@ article#post-78 {
         section.join-us-info-container {
             @include page-grid-layout;
             section.join-us-info {
-               display: flex;
-               align-items: center;
-               justify-content: space-between;
+            //    display: flex;
+            //    align-items: center;
+            //    justify-content: space-between;
 
                 div.join-us-content {
-                    padding-right: 2rem;
+                    padding: 0 3rem;
                 }
             }
         }

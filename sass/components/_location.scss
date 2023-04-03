@@ -40,14 +40,14 @@ body.post-type-archive-cafe-location {
     }
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 65rem) {
     body.post-type-archive-cafe-location {
         section.locations-container {
-            display: grid;
-            grid-template-columns: 65rem;
-            justify-content:center;
+            @include page-grid-layout;
             section.locations{
-                
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
             }
         }
         section.google-maps-container {

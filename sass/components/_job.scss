@@ -7,13 +7,19 @@ body.post-type-archive-cafe-jobs {
         section.location {
             h2 {
                 font-family: $bungee;
+                padding-bottom: .5rem;
+                border-bottom: $coral solid 3px;
+            }
+
+            article.position-container {
+                padding-left: 2.5rem;
             }
         }
     }
     
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 65rem) {
     body.post-type-archive-cafe-jobs {
         section.location-container {
             section.location {
