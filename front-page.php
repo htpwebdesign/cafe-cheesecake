@@ -84,8 +84,8 @@ get_header();
 									<li>
 										<a href="<?php echo get_permalink( $relation->ID ); ?>">
 										<?php echo "<img src='" . get_the_post_thumbnail_url( $relation->ID ) . "'>" ?></a>
-										<?php echo get_the_title( $relation->ID ); ?>
-										<?php echo get_the_excerpt( $relation->ID ); ?>
+										<?php echo "<h3>" . get_the_title( $relation->ID ) . "</h3>" ?>
+										<?php echo "<p>" . get_the_excerpt( $relation->ID ) . "</p>" ?>
 
 								</li>
 								<?php endforeach; ?>
@@ -109,7 +109,10 @@ get_header();
 								echo '<h3>' . get_field( 'drinks_title' ) . '</h3>';
 							}
 
+							?>
 
+								
+							<?php
 							
 							$parent_category_slug = 'drinks';
 							$parent_category_id = get_term_by('slug', $parent_category_slug, 'product_cat')->term_id;
@@ -119,9 +122,10 @@ get_header();
 								$term = get_term_by('id', $child_category, 'product_cat');
 								$thumbnail_id = get_term_meta($child_category, 'thumbnail_id', true);
 
+								echo '<div class="single-drinks">';
 								echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
 								echo '<a href="' . get_term_link($term) . '">' . wp_get_attachment_image($thumbnail_id, 'thumbnail') . '</a>';
-
+								echo '</div>';
 							}
 
 							// See Menu Button
@@ -130,17 +134,20 @@ get_header();
 								echo '<a href="' . $urldrinks . '" class="button">See Menu</a>';
 							}
 
-							if ( get_field( 'merch_heading' ) ) {
-								echo '<h3>' . get_field( 'merch_heading' ) . '</h3>';
-							}
-
 							?>
+							</div>
 					</section>
 				</section>
 
 				<section class="merch-container">
 					<section class="merch">
+
 							<?php
+
+							if ( get_field( 'merch_heading' ) ) {
+								echo '<h3>' . get_field( 'merch_heading' ) . '</h3>';
+							}
+
 							// Display Merch Posts
 							$argsMerch = array(
 								'post_type' 		=> 'product',
