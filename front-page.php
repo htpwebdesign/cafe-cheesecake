@@ -49,7 +49,6 @@ get_header();
 
 					<section class="cheesecakes-container">
 						<section class="cheesecakes">
-							<article>
 							<?php
 							if ( get_field( 'our_cheesecakes_heading' ) ) {
 								echo '<h3>' . get_field( 'our_cheesecakes_heading' ) . '</h3>';
@@ -65,14 +64,11 @@ get_header();
 								}
 							
 								?>
-
-							</article>
 						</section>
 					</section>
 
 					<section class="favourites-container">
 						<section class="favourites">
-							<article>
 							<?php
 							if ( get_field( 'favourites_heading' ) ) {
 								echo '<h3>' . get_field( 'favourites_heading' ) . '</h3>';
@@ -89,7 +85,6 @@ get_header();
 										<a href="<?php echo get_permalink( $relation->ID ); ?>">
 										<?php echo "<img src='" . get_the_post_thumbnail_url( $relation->ID ) . "'>" ?></a>
 										<?php echo get_the_title( $relation->ID ); ?>
-										<br>
 										<?php echo get_the_excerpt( $relation->ID ); ?>
 
 								</li>
@@ -103,13 +98,11 @@ get_header();
 								echo '<a href="' . $urlfave . '" class="button">See Menu</a>';
 							}
 							?>
-						</article>
 					</section>
 				</section>
 
 				<section class="drinks-container">
 					<section class="drinks">
-						<article>
 							<?php
 
 							if ( get_field( 'drinks_title' ) ) {
@@ -142,13 +135,11 @@ get_header();
 							}
 
 							?>
-						</article>
 					</section>
 				</section>
 
 				<section class="merch-container">
 					<section class="merch">
-						<article>
 							<?php
 							// Display Merch Posts
 							$argsMerch = array(
@@ -173,13 +164,11 @@ get_header();
 									global $product;
 									?>
 								
-									<article>
 										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail(); ?>
 											<h3><?php the_title(); ?></h3>
 											<?php echo $product->get_price_html(); ?>
 										</a>
-									</article>		
 									<?php			
 								}
 								wp_reset_postdata();
@@ -191,9 +180,7 @@ get_header();
 							}
 
 						}
-
 						?>
-						</article>
 					</section>
 				</section>
 			</section>
