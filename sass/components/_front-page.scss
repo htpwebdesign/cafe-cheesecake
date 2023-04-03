@@ -1,39 +1,107 @@
 @import "abstracts/abstracts";
 
 .site-main {
-  
   .home-blog {
-
     .home-carousel {
       display: flex;
       flex-wrap: nowrap;
       overflow-x: auto;
+      max-width: 100vw;
+      overflow: hidden;
       margin-bottom: 1rem;
+
+      .owl-controls {
+        display: none;
+      }
 
       li {
         flex: 0 0 auto;
-        margin-right: 1rem;
+        // margin-right: 1rem;
       }
     }
   }
 
-  .favourites-container{
-    .favourites{
-      ul{
+  .favourites-container {
+    .favourites {
+      ul {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         margin: 0;
         padding: 0;
-        
-        li{
+
+        li {
           display: flex;
           flex-wrap: wrap;
+          justify-content: center;
           padding: 0 2rem;
-          a{
-            img{
-              max-width: 100%;
+          a {
+            img {
+              max-width: 40%;
               height: auto;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .favourites-container {
+    .favourites {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+
+        li {
+          width: 30%;
+          a {
+            img {
+              max-width: 40%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.drinks-container {
+  section.drinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    h3 {
+      width: 100%;
+    }
+    .single-drinks {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      a {
+        width: 100%;
+      }
+    }
+    a {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  section.drinks-container {
+    section.drinks {
+      .single-drinks {
+        width: 30%;
+        display: flex;
+        flex-wrap: wrap;
+        a {
+          width: 100%;
         }
       }
     }
@@ -53,15 +121,17 @@
           @include page-grid-layout;
         }
       }
+
       section.drinks-container {
         section.drinks {
-          @include page-grid-layout;
+          // @include page-grid-layout;
         }
       }
-      section.merch-container {
-        section.merch {
-          @include page-grid-layout;
-        }
+    }
+
+    section.merch-container {
+      section.merch {
+        @include page-grid-layout;
       }
     }
   }
