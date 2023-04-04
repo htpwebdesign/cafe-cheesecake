@@ -15,6 +15,48 @@
         // margin-right: 1rem;
       }
     }
+
+    img {
+      // max-width: 2rem;
+      // margin: 0.3rem 0;
+    }
+  }
+
+  section.cheesecakes-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+
+    section.cheesecakes {
+      p {
+        margin: 0;
+        justify-content: center;
+        text-align: left;
+      }
+
+      a {
+        display: inline-block;
+        border: 2px solid $coral;
+        border-radius: 25px 25px;
+        margin: 3rem 0;
+        padding: 0.5rem 1.5rem;
+        transition: 0.3s ease;
+        color: $coral;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $coral;
+          color: $bg-color;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 48rem) {
+    section.cheesecakes-container {
+      width: 50%;
+    }
   }
 
   .favourites-container {
@@ -30,13 +72,35 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          padding: 0 2rem;
+          padding: 0 1rem;
           a {
             img {
-              max-width: 40%;
-              height: auto;
+              margin: 0 auto;
+              object-fit: cover;
+              width: 200px;
+              height: 200px;
+              border-radius: 50%;
             }
           }
+          h3 {
+            width: 100%;
+          }
+        }
+      }
+
+      .button {
+        display: inline-block;
+        border: 2px solid $coral;
+        border-radius: 25px 25px;
+        margin: 3rem 0;
+        padding: 0.5rem 1.5rem;
+        transition: 0.3s ease;
+        color: $coral;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $coral;
+          color: $bg-color;
         }
       }
     }
@@ -56,8 +120,8 @@
           width: 30%;
           a {
             img {
-              max-width: 40%;
-              height: auto;
+              max-width: 300px;
+              height: 300px;
             }
           }
         }
@@ -66,25 +130,68 @@
   }
 }
 
+@media screen and (min-width: 82rem) {
+  .favourites-container {
+    .favourites {
+      ul {
+        li {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+
 section.drinks-container {
   section.drinks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
     h3 {
       width: 100%;
     }
-    .single-drinks {
-      width: 80%;
+
+    .single-drinks-container {
       display: flex;
       flex-wrap: wrap;
-      a {
-        width: 100%;
+      justify-content: center;
+
+      .single-drinks {
+        background-color: #fff;
+        padding: 2rem;
+        margin: 1rem 2rem;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        a {
+          width: 100%;
+          text-decoration: none;
+          color: $text-color;
+          transition: 0.3s ease;
+          
+          &:hover{
+            color: $coral;
+          }
+          img {
+            border-radius: 50%;
+          }
+        }
       }
     }
-    a {
-      width: 100%;
+
+    .button {
+      display: inline-block;
+      border: 2px solid $coral;
+      border-radius: 25px 25px;
+      margin: 3rem 5rem;
+      padding: 0.5rem 1.5rem;
+      transition: 0.3s ease;
+      color: $coral;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $coral;
+        color: $bg-color;
+      }
     }
   }
 }
@@ -92,12 +199,18 @@ section.drinks-container {
 @media screen and (min-width: 48rem) {
   section.drinks-container {
     section.drinks {
-      .single-drinks {
-        width: 30%;
-        display: flex;
-        flex-wrap: wrap;
-        a {
-          width: 100%;
+      .single-drinks-container {
+        .single-drinks {
+          width: 20%;
+          display: flex;
+          flex-wrap: wrap;
+          a {
+            width: 100%;
+          }
+        }
+
+        .button {
+          margin: 0 10rem;
         }
       }
     }
@@ -135,7 +248,7 @@ section.merch-container {
   }
 }
 
-@media screen and (min-width: 48rem){
+@media screen and (min-width: 48rem) {
   section.merch-container {
     section.merch {
       .single-merch {
@@ -156,12 +269,12 @@ section.merch-container {
     section.home-blog {
       section.cheesecakes-container {
         section.cheesecakes {
-          @include page-grid-layout;
+          // @include page-grid-layout;
         }
       }
       section.favourites-container {
         section.favourites {
-          @include page-grid-layout;
+          // @include page-grid-layout;
         }
       }
 

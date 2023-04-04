@@ -118,15 +118,18 @@ get_header();
 							$parent_category_id = get_term_by('slug', $parent_category_slug, 'product_cat')->term_id;
 							$child_categories = get_term_children($parent_category_id, 'product_cat');
 
+							echo '<div class="single-drinks-container">';
+
 							foreach ($child_categories as $child_category) {
 								$term = get_term_by('id', $child_category, 'product_cat');
 								$thumbnail_id = get_term_meta($child_category, 'thumbnail_id', true);
 
 								echo '<div class="single-drinks">';
-								echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
 								echo '<a href="' . get_term_link($term) . '">' . wp_get_attachment_image($thumbnail_id, 'thumbnail') . '</a>';
+								echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
 								echo '</div>';
 							}
+							echo '</div>';
 
 							// See Menu Button
 							$urldrinks = get_field( 'drinks_button' );
