@@ -2,11 +2,19 @@
   display: flex;
   justify-content: space-between;
   background-color: $coral;
+
+  .site-branding {
+    .custom-logo-link {
+      img {
+        max-width: 4rem;
+      }
+    }
+  }
   
   .main-navigation {
     display: block;
     justify-content: right;
-    
+
     ul {
       display: none;
       list-style: none;
@@ -32,7 +40,6 @@
           &.focus > ul {
             display: block;
             left: auto;
-
           }
         }
 
@@ -60,7 +67,6 @@
 
       &:hover > a,
       &.focus > a {
-        
       }
     }
 
@@ -68,7 +74,6 @@
       display: block;
       text-decoration: none;
       color: $text-color-light;
-
     }
 
     .current_page_item > a,
@@ -108,10 +113,9 @@
         li {
           padding: 1rem;
           transition: 0.3s ease;
-          
-          &:hover{
-            background-color: $yellow;
 
+          &:hover {
+            background-color: $yellow;
           }
         }
       }
@@ -154,7 +158,6 @@
         grid-template-columns: repeat(2, 1fr);
         margin: 0;
         padding: 0;
-
       }
     }
   }
