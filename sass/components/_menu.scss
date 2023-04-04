@@ -2,6 +2,7 @@
 
 body.page-id-67 {
     section.menu-container {
+        margin: 0 1rem;
         section.menu {
             h2 {
                 font-family: $bungee;
@@ -121,7 +122,7 @@ body.page-id-67 {
     }
 }
 
-@media (min-width: 70rem) {
+@media (min-width: 72rem) {
     body.page-id-67 {
         section.menu-container {
             section.menu {

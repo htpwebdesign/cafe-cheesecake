@@ -1,4 +1,4 @@
-@import 'abstracts/abstracts';
+@import "abstracts/abstracts";
 
 main.site-main {
     background-color: $bg-color;
@@ -12,11 +12,15 @@ main.site-main {
         padding-top: 2rem;
     }
 
-    section{
+    section {
         // padding: 1rem;
     }
 
     p {
         line-height: 1.75;
+    }
+
+    nav.woocommerce-breadcrumb {
+        padding-top: 2rem;
     }
 }
