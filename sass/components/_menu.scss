@@ -33,12 +33,14 @@ body.page-id-67 {
                         margin-bottom: 0.5rem;
                         order: 3;
                     }
+
                     div.menu-item-image-container {
                         margin-bottom: 0.5rem;
                         img {
                             border: 5px solid $blue;
                             max-width: 100%;
                             object-fit: cover;
+                            height: 360px;
                         }
                     }
                 }
@@ -80,6 +82,9 @@ body.page-id-67 {
                                 border: 5px solid $blue;
                             }
                         }
+                        h3 {
+                            font-size: 1.05rem;
+                        }
                     }
                 }
                 div.menu-category-grid-container {
@@ -98,11 +103,19 @@ body.page-id-67 {
 
 @media (min-width: 48rem) {
     body.page-id-67 {
-        div.menu-tab-btn-container {
-            display: flex;
-            flex-direction: row;
-            button.menu-tab-btn {
-                background-color: cornflowerblue;
+        section.menu-container {
+            section.menu {
+                div.menu-tab-btn-container {
+                    display: flex;
+                    flex-direction: row;
+                }
+                section.menu-category-container {
+                    article.menu-item {
+                        h3 {
+                            font-size: 1.125rem;
+                        }
+                    }
+                }
             }
         }
     }
