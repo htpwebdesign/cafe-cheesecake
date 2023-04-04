@@ -22,10 +22,33 @@ ul.products {
     li.product {
         list-style: none;
         margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            border: 2px solid $blue;
+        }
+        img:hover,
+        img:focus {
+            border: 2px solid $coral;
+        }
         a {
             text-decoration: none;
             display: block;
             color: $text-color;
+        }
+
+        a.add_to_cart_button {
+            margin-top: 0.5rem;
+            border: 2px solid $blue;
+            padding: 0.25rem 1.25rem;
+        }
+        a.add_to_cart_button:hover {
+            margin-top: 0.5rem;
+            border: 2px solid $coral;
+        }
+        h2 {
+            font-size: 1.35rem;
         }
     }
 }
@@ -45,7 +68,7 @@ ul.page-numbers {
     ul.products {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-gap: 1rem;
+        gap: 1.75rem 1.25rem;
 
         li.product {
             margin-bottom: 0;

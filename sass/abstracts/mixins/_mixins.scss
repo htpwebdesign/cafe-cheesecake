@@ -13,8 +13,16 @@
 
 // Main grid layout
 @mixin page-grid-layout {
-	display: grid;
-	grid-template-columns: 65rem;
-	justify-content:center;
-	align-items: center;
+    display: grid;
+    grid-template-columns: 65rem;
+    justify-content: center;
+    align-items: center;
+}
+
+// Menu grid layout
+@mixin menu-grid-layout {
+    display: grid;
+    grid-template-columns: 70rem;
+    justify-content: center;
+    align-items: center;
 }

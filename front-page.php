@@ -118,15 +118,18 @@ get_header();
 							$parent_category_id = get_term_by('slug', $parent_category_slug, 'product_cat')->term_id;
 							$child_categories = get_term_children($parent_category_id, 'product_cat');
 
+							echo '<div class="single-drinks-container">';
+
 							foreach ($child_categories as $child_category) {
 								$term = get_term_by('id', $child_category, 'product_cat');
 								$thumbnail_id = get_term_meta($child_category, 'thumbnail_id', true);
 
 								echo '<div class="single-drinks">';
-								echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
 								echo '<a href="' . get_term_link($term) . '">' . wp_get_attachment_image($thumbnail_id, 'thumbnail') . '</a>';
+								echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
 								echo '</div>';
 							}
+							echo '</div>';
 
 							// See Menu Button
 							$urldrinks = get_field( 'drinks_button' );
@@ -165,22 +168,29 @@ get_header();
 							
 							$queryMerch = new WP_Query( $argsMerch );
 							
+							echo '<div class="single-merch-container">';
+
 							if ( $queryMerch->have_posts() ){
 								while ( $queryMerch->have_posts() ) {
 									$queryMerch->the_post(); 
 									global $product;
 									?>
-								
+
+									<div class="single-merch">
 										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail(); ?>
 											<h3><?php the_title(); ?></h3>
-											<?php echo $product->get_price_html(); ?>
 										</a>
+										<?php echo $product->get_price_html(); ?>
+
+									</div>
 									<?php			
 								}
 								wp_reset_postdata();
 							}
 									
+							echo '</div>';
+
 							$urlmerch = get_field( 'merch_section_button' );
 							if ( get_field( 'merch_section_button' ) ) {
 								echo '<a href="' . $urlmerch . '" class="button">Our Shop</a>';

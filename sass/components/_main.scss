@@ -1,22 +1,27 @@
-@import 'abstracts/abstracts';
+@import "abstracts/abstracts";
 
 main.site-main {
     background-color: $bg-color;
     font-family: $roboto;
     color: $text-color;
     text-align: center;
+    padding-top: 1rem;
 
     h1 {
         font-family: $abril;
         font-size: 3rem;
-        padding-top: 2rem;
+        margin-top: 0;
     }
 
-    section{
-        padding: 1rem;
+    section {
+        // padding: 1rem;
     }
 
     p {
         line-height: 1.75;
+    }
+
+    nav.woocommerce-breadcrumb {
+        padding-top: 2rem;
     }
 }
