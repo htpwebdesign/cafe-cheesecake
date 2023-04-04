@@ -1,11 +1,12 @@
 .site-header {
   display: flex;
   justify-content: space-between;
-
+  background-color: $coral;
+  
   .main-navigation {
     display: block;
     justify-content: right;
-
+    
     ul {
       display: none;
       list-style: none;
@@ -19,6 +20,7 @@
         top: 100%;
         left: -999em;
         z-index: 99999;
+        background-color: $coral;
 
         ul {
           left: -999em;
@@ -30,6 +32,7 @@
           &.focus > ul {
             display: block;
             left: auto;
+
           }
         }
 
@@ -57,12 +60,15 @@
 
       &:hover > a,
       &.focus > a {
+        
       }
     }
 
     a {
       display: block;
       text-decoration: none;
+      color: $text-color-light;
+
     }
 
     .current_page_item > a,
@@ -101,6 +107,12 @@
         justify-content: right;
         li {
           padding: 1rem;
+          transition: 0.3s ease;
+          
+          &:hover{
+            background-color: $yellow;
+
+          }
         }
       }
     }

@@ -168,6 +168,8 @@ get_header();
 							
 							$queryMerch = new WP_Query( $argsMerch );
 							
+							echo '<div class="single-merch-container">';
+
 							if ( $queryMerch->have_posts() ){
 								while ( $queryMerch->have_posts() ) {
 									$queryMerch->the_post(); 
@@ -178,14 +180,17 @@ get_header();
 										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail(); ?>
 											<h3><?php the_title(); ?></h3>
-											<?php echo $product->get_price_html(); ?>
 										</a>
+										<?php echo $product->get_price_html(); ?>
+
 									</div>
 									<?php			
 								}
 								wp_reset_postdata();
 							}
 									
+							echo '</div>';
+
 							$urlmerch = get_field( 'merch_section_button' );
 							if ( get_field( 'merch_section_button' ) ) {
 								echo '<a href="' . $urlmerch . '" class="button">Our Shop</a>';
