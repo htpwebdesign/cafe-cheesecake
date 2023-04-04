@@ -49,28 +49,35 @@ get_header();
 					echo '</section>';
 				echo '</section>';
 
-				if ( get_field( 'location_map_header' ) ) {
-					echo '<h2>' . get_field( 'location_map_header' ) . '</h2>';
-				}
+
 
 				echo '<section class="google-maps-container">';
-				if( have_rows('all_location_map') ): ?>
-					<div class="acf-map" data-zoom="16">
-						<?php while ( have_rows('all_location_map') ) : the_row(); 
-				
-							// Load sub field values.
-							$location = get_sub_field('location');
-							$title = get_sub_field('title');
-							$description = get_sub_field('description');
-							?>
-							<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
-								<h3><?php echo esc_html( $title ); ?></h3>
-								<p><em><?php echo esc_html( $location['address'] ); ?></em></p>
-								<p><?php echo esc_html( $description ); ?></p>
+
+					echo '<section class="map-header-container">';
+					if ( get_field( 'location_map_header' ) ) {
+						echo '<h2>' . get_field( 'location_map_header' ) . '</h2>';
+					}
+					echo '</section>';
+
+					echo '<section class="google-maps">';
+						if( have_rows('all_location_map') ): ?>
+							<div class="acf-map" data-zoom="16">
+								<?php while ( have_rows('all_location_map') ) : the_row(); 
+						
+									// Load sub field values.
+									$location = get_sub_field('location');
+									$title = get_sub_field('title');
+									$description = get_sub_field('description');
+									?>
+									<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+										<h3><?php echo esc_html( $title ); ?></h3>
+										<p><em><?php echo esc_html( $location['address'] ); ?></em></p>
+										<p><?php echo esc_html( $description ); ?></p>
+									</div>
+							<?php endwhile; ?>
 							</div>
-					<?php endwhile; ?>
-					</div>
-				<?php endif; 
+						<?php endif; 
+					echo '</section>';
 				echo '</section>';
 			?>
 	</main><!-- #main -->
