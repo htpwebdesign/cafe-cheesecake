@@ -28,11 +28,16 @@ ul.products {
         img {
             border: 2px solid $blue;
         }
+        img:hover,
+        img:focus {
+            border: 2px solid $coral;
+        }
         a {
             text-decoration: none;
             display: block;
             color: $text-color;
         }
+
         a.add_to_cart_button {
             margin-top: 0.5rem;
             border: 2px solid $blue;

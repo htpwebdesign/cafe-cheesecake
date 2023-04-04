@@ -49,7 +49,6 @@ page.addEventListener("click", function (e) {
 function defaultActiveClass() {
     cakesSection.classList.add("active");
     cakeTabBtn.classList.add("current-menu-tab");
-    console.log("hi");
 }
 
 defaultActiveClass();

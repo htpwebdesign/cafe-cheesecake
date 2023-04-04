@@ -94,7 +94,8 @@ body.single-product {
                         }
                     }
                     li:hover,
-                    li:focus {
+                    li:focus,
+                    li.active {
                         border-bottom: 2px solid $blue;
                     }
                 }
@@ -106,6 +107,9 @@ body.single-product {
             section.related {
                 img {
                     border: 2px solid $blue;
+                }
+                img:hover {
+                    border: 2px solid $coral;
                 }
             }
             h1.product_title {

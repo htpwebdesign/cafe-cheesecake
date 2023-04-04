@@ -39,10 +39,7 @@
 				<?php
 			endif;
 			$cafe_cheesecake_description = get_bloginfo( 'description', 'display' );
-			if ( $cafe_cheesecake_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $cafe_cheesecake_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
