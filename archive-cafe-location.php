@@ -49,6 +49,10 @@ get_header();
 					echo '</section>';
 				echo '</section>';
 
+				if ( get_field( 'location_map_header' ) ) {
+					echo '<h2>' . get_field( 'location_map_header' ) . '</h2>';
+				}
+
 				echo '<section class="google-maps-container">';
 				if( have_rows('all_location_map') ): ?>
 					<div class="acf-map" data-zoom="16">

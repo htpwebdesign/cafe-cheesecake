@@ -36,7 +36,6 @@ body.page-id-69 {
                 border-radius: 20px 20px;
 
                 summary.faq-question {
-                    
                     padding: 1rem;
                 }
 
@@ -67,12 +66,14 @@ body.page-id-69 {
     }
 
     section.image-container {
-        padding-bottom: 1rem;
+        padding-bottom: .75rem;
         img {
-            width: 61rem;
+            width: 60.5rem;
             height: 18rem;
             object-fit: cover;
-            border-radius: 20px 20px;
+            border-radius: 10px 10px;
+            border: $blue solid 8px;
+            outline: $coral solid 8px;
         }
     }
 

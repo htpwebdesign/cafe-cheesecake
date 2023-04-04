@@ -39,7 +39,7 @@ get_header();
 			<section class="image-container">
 				<?php
 				if ( get_field( 'catering_image' ) ) {
-					echo wp_get_attachment_image( get_field( 'catering_image' ), 'medium', '',
+					echo wp_get_attachment_image( get_field( 'catering_image' ), '',
 					array(''));
 				}
 				?>
