@@ -6,41 +6,32 @@ article#post-78 {
         margin-bottom: 0;
     }
 
-    section.company-info-container {
-        section.company-info {
-            p {
-                text-align: left;
-            }
-        }
-    }
     section.founder-info-container {
-
-        padding-top: 3rem;
+        padding-top: 2rem;
         section.founder-info {
             h3 {
                 margin-bottom: 0;
             }
 
             img {
-                width: 13rem;
-                height: 13rem;
+                width: 15rem;
+                height: 15rem;
                 object-fit: cover;
                 border-radius: 50% 50%;
-                border: $yellow solid 5px;
+                border: $yellow solid 10px;
+                outline: $coral solid 10px;
+                margin: .5rem 0;
             }
         }
     }
 
-    section.locations-info-container {
-        padding-top: 2rem;
-        section.locations-info {
-            a.button {
-                text-decoration: none;
-                padding: .75rem 1rem;
-                background-color: $bg-color;
-                border: $text-color solid 2px;
-                border-radius: 50px 50px;
-                color: $text-color;
+    section.company-info-container {
+        h2 {
+            color: $coral;
+        }
+        section.company-info {
+            p {
+                text-align: left;
             }
         }
     }
@@ -48,7 +39,7 @@ article#post-78 {
     section.join-us-info-container {
         background-color: $yellow;
         section.join-us-info {
-            padding-bottom: 3rem;
+            padding: 3rem 0 5rem 0;
             a.button {
                 text-decoration: none;
                 padding: .75rem 1rem;
@@ -56,6 +47,16 @@ article#post-78 {
                 border: $text-color solid 2px;
                 border-radius: 50px 50px;
                 color: $text-color;
+            }
+
+            img {
+                height: 20rem;
+                width: 30rem;
+                object-fit: cover;
+                border-radius: 10px 10px;
+                border: $coral solid 10px;
+                outline: $bg-color solid 10px;
+                margin: .5rem 0;
             }
         }
     }
@@ -72,33 +73,23 @@ article#post-78 {
                 justify-content: space-between;
 
                 p{
-                    padding-right: 2rem;
+                    padding-right: 5rem;
                 }
             }
         }
         section.founder-info-container {
             @include page-grid-layout;
             section.founder-info {
-                padding: 0 3rem;
-            }
-        }
-
-        section.locations-info-container {
-            @include page-grid-layout;
-            section.locations-info {
-               
+                padding: 0 6.5rem;
             }
         }
 
         section.join-us-info-container {
             @include page-grid-layout;
             section.join-us-info {
-            //    display: flex;
-            //    align-items: center;
-            //    justify-content: space-between;
 
                 div.join-us-content {
-                    padding: 0 3rem;
+                    padding: 0 6.5rem;
                 }
             }
         }

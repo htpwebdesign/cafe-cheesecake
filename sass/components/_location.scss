@@ -1,6 +1,11 @@
 @import 'abstracts/abstracts';
 body.post-type-archive-cafe-location {
+
+    h1 {
+        margin-bottom: 0;
+    }
     section.locations-container {
+        padding-bottom: 2rem;
         section.locations{
             display: flex;
             flex-wrap: wrap;
@@ -8,7 +13,7 @@ body.post-type-archive-cafe-location {
             section.location-single {
                 max-width: 20rem;
                 margin: 1rem .5rem;
-                padding-bottom: 1rem;
+                padding: 0 1rem;
 
                 h2, p {
                     text-align: left;

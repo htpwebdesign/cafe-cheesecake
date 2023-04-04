@@ -34,7 +34,17 @@ get_header();
 			;
 			
 			$query = new WP_Query( $args );
-			
+			?>
+			<!-- output image -->
+			<section class="image-container">
+				<?php
+				if ( get_field( 'catering_image' ) ) {
+					echo wp_get_attachment_image( get_field( 'catering_image' ), '',
+					array(''));
+				}
+				?>
+			</section>
+			<?php
 			if ( $query -> have_posts() ){
 				?>
 				<section class="catering-container">
@@ -45,6 +55,7 @@ get_header();
 						if ( function_exists( 'get_field' ) ) {
 							echo '<article class="catering-options">';
 							if ( get_field( 'service_type_title' ) ) {
+							
 								echo '<h2 id="'. esc_attr( get_the_ID() ) . '">' . esc_html( get_the_title() ) .'</h2>';
 								?>
 								<p class="catering-option-description"> 
@@ -64,6 +75,8 @@ get_header();
 				wp_reset_postdata();
 	
 			?>
+
+
 			<!-- output faq -->
 			<section class="faq-container">
 				<section class=faq>

@@ -53,23 +53,12 @@ get_header();
 						</section>
 					</section>
 
-					<section class="locations-info-container">
-						<section class="locations-info">
+					<section class="company-info-container">
 						<?php
-
-							if ( get_field( 'our_locations_heading' ) ) {
-								echo '<h2>' . get_field( 'our_locations_heading' ) . '</h2>';
-							}
-
-							$url = get_field( 'read_more_button' );
-							if ( get_field( 'read_more_button' ) ) {
-								echo '<a href="' . $url . '" class="button">Locations</a>';
+						if ( get_field( 'company_heading' ) ) {
+								echo '<h2>' . get_field( 'company_heading' ) . '</h2>';
 							}
 						?>
-						</section>
-					</section>
-
-					<section class="company-info-container">
 						<section class="company-info">
 						<?php
 						the_content();
@@ -78,10 +67,6 @@ get_header();
 							if ( get_field( 'company_image' ) ) {
 								echo wp_get_attachment_image( get_field( 'company_image' ), 'medium', '',
 								array(''));
-							}
-					
-							if ( get_field( 'company_heading' ) ) {
-								echo '<h2>' . get_field( 'company_heading' ) . '</h2>';
 							}
 							
 							if ( get_field( 'company_background' ) ) {
@@ -96,7 +81,7 @@ get_header();
 							
 						<?php
 							if ( get_field( 'join_our_team_image' ) ) {
-							echo wp_get_attachment_image( get_field( 'join_our_team_image' ), 'medium', '',
+							echo wp_get_attachment_image( get_field( 'join_our_team_image' ), '',
 							array(''));
 							}
 							
