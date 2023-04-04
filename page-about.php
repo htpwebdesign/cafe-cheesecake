@@ -95,10 +95,10 @@ get_header();
 						<section class="join-us-info">	
 							
 						<?php
-							// if ( get_field( 'join_our_team_image' ) ) {
-							// echo wp_get_attachment_image( get_field( 'join_our_team_image' ), 'medium', '',
-							// array(''));
-							// }
+							if ( get_field( 'join_our_team_image' ) ) {
+							echo wp_get_attachment_image( get_field( 'join_our_team_image' ), 'medium', '',
+							array(''));
+							}
 							
 							echo '<div class="join-us-content">';
 							if ( get_field( 'join_our_team_heading' ) ) {

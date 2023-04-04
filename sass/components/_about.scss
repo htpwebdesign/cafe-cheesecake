@@ -14,7 +14,6 @@ article#post-78 {
         }
     }
     section.founder-info-container {
-
         padding-top: 3rem;
         section.founder-info {
             h3 {
@@ -32,7 +31,7 @@ article#post-78 {
     }
 
     section.locations-info-container {
-        padding-top: 2rem;
+        padding: 1rem 0 2rem 0;
         section.locations-info {
             a.button {
                 text-decoration: none;
@@ -48,7 +47,7 @@ article#post-78 {
     section.join-us-info-container {
         background-color: $yellow;
         section.join-us-info {
-            padding-bottom: 3rem;
+            padding: 3rem 0 5rem 0;
             a.button {
                 text-decoration: none;
                 padding: .75rem 1rem;
@@ -56,6 +55,14 @@ article#post-78 {
                 border: $text-color solid 2px;
                 border-radius: 50px 50px;
                 color: $text-color;
+            }
+
+            img {
+                height: 20rem;
+                width: 30rem;
+                object-fit: cover;
+                border-radius: 10px 10px;
+                padding-bottom: 1rem;
             }
         }
     }
@@ -72,14 +79,14 @@ article#post-78 {
                 justify-content: space-between;
 
                 p{
-                    padding-right: 2rem;
+                    padding-right: 5rem;
                 }
             }
         }
         section.founder-info-container {
             @include page-grid-layout;
             section.founder-info {
-                padding: 0 3rem;
+                padding: 0 5rem;
             }
         }
 
@@ -93,12 +100,9 @@ article#post-78 {
         section.join-us-info-container {
             @include page-grid-layout;
             section.join-us-info {
-            //    display: flex;
-            //    align-items: center;
-            //    justify-content: space-between;
 
                 div.join-us-content {
-                    padding: 0 3rem;
+                    padding: 0 5rem;
                 }
             }
         }
