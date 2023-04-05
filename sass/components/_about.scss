@@ -41,12 +41,8 @@ article#post-78 {
         section.join-us-info {
             padding: 3rem 0 5rem 0;
             a.button {
-                text-decoration: none;
-                padding: .75rem 1rem;
-                background-color: $bg-color;
-                border: $text-color solid 2px;
-                border-radius: 50px 50px;
-                color: $text-color;
+                @include button-style;
+
             }
 
             img {
