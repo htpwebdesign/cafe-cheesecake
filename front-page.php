@@ -32,7 +32,7 @@ get_header();
 						  <?php while( have_rows('carousel') ): the_row(); ?>
 							<li>
 							  <?php 
-									echo wp_get_attachment_image( get_sub_field( 'banner_image' ), 'full')?>
+									echo wp_get_attachment_image( get_sub_field( 'banner_image' ), 'banner-crop')?>
 							  <?php echo "<h2>" . get_sub_field('banner_heading') . "</h2>"; ?>
 							  <?php echo '<p>' . get_sub_field('banner_description') . '</p>'; ?>
 							</li>
