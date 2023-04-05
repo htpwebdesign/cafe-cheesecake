@@ -10,7 +10,7 @@
       }
     }
   }
-  
+
   .main-navigation {
     display: block;
     justify-content: right;
@@ -93,6 +93,7 @@
   .site-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .site-navigation {
       width: 30%;
@@ -111,7 +112,7 @@
         display: flex;
         justify-content: right;
         li {
-          padding: 1rem;
+          padding: 1.5rem 1rem;
           transition: 0.3s ease;
 
           &:hover {
@@ -144,12 +145,17 @@
 }
 
 .site-footer {
+  background-color: $blue;
+  padding: 4rem 0;
+
   .site-info {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
 
     .menu-footer-menu-container {
-      display: block;
+      width: 50%;
+      text-align: center;
 
       ul {
         list-style: none;
@@ -158,6 +164,49 @@
         grid-template-columns: repeat(2, 1fr);
         margin: 0;
         padding: 0;
+
+        li {
+          padding: 0.3rem;
+
+          a {
+            text-decoration: none;
+            color: $text-color;
+            transition: 0.3s ease;
+          }
+        }
+      }
+
+      @media screen and (min-width: 48rem) {
+        width: 30%;
+        margin: 0 auto;
+      }
+    }
+
+    @media screen and (min-width: 48rem) {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .menu-social-media-menu-container {
+      width: 80%;
+      text-align: center;
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          a {
+            text-decoration: none;
+            color: $text-color;
+          }
+        }
+      }
+
+      @media screen and (min-width: 48rem) {
+        width: 30%;
+        margin: 0 auto;
+
       }
     }
   }
