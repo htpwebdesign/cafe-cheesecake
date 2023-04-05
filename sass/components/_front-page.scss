@@ -89,19 +89,7 @@
             }
 
             .button {
-                display: inline-block;
-                border: 2px solid $coral;
-                border-radius: 25px 25px;
-                margin: 3rem 0;
-                padding: 0.5rem 1.5rem;
-                transition: 0.3s ease;
-                color: $coral;
-                text-decoration: none;
-
-                &:hover {
-                    background-color: $coral;
-                    color: $bg-color;
-                }
+                @include button-style;
             }
         }
     }
@@ -179,19 +167,7 @@ section.drinks-container {
         }
 
         .button {
-            display: inline-block;
-            border: 2px solid $coral;
-            border-radius: 25px 25px;
-            margin: 3rem 5rem;
-            padding: 0.5rem 1.5rem;
-            transition: 0.3s ease;
-            color: $coral;
-            text-decoration: none;
-
-            &:hover {
-                background-color: $coral;
-                color: $bg-color;
-            }
+            @include button-style;
         }
     }
 }
@@ -286,7 +262,8 @@ section.merch-container {
                 width: 18%;
                 a {
                     img {
-                        height: 200px;
+                        width: 100%;
+                        height: 300px;
                         object-fit: cover;
                     }
                 }
