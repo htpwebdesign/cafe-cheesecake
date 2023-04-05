@@ -1,28 +1,45 @@
 // Center block
 @mixin center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-    width: map-get($columns, $numberColumns) -
-        (($columns__margin * ($numberColumns - 1)) / $numberColumns);
+  width: map-get($columns, $numberColumns) -
+    (($columns__margin * ($numberColumns - 1)) / $numberColumns);
 }
 
 // Main grid layout
 @mixin page-grid-layout {
-    display: grid;
-    grid-template-columns: 65rem;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 65rem;
+  justify-content: center;
+  align-items: center;
 }
 
 // Menu grid layout
 @mixin menu-grid-layout {
-    display: grid;
-    grid-template-columns: 70rem;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 70rem;
+  justify-content: center;
+  align-items: center;
+}
+
+// Button css
+@mixin button-style {
+  display: inline-block;
+  border: 2px solid $coral;
+  border-radius: 25px 25px;
+  margin: 3rem 5rem;
+  padding: 0.5rem 1.5rem;
+  transition: 0.3s ease;
+  color: $coral;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $coral;
+    color: $bg-color;
+  }
 }
