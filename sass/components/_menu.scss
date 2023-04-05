@@ -10,12 +10,14 @@ body.page-id-67 {
             div.menu-tab-btn-container {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
                 button.menu-tab-btn {
                     background-color: $bg-color;
                     border: 4px solid $coral;
                     margin-bottom: 0.25rem;
                     border-radius: 20px;
                     padding: 0.5rem 1.25rem;
+                    width: 280px;
                 }
                 button.menu-tab-btn.current-menu-tab {
                     border: 4px solid $blue;
@@ -68,6 +70,8 @@ body.page-id-67 {
                         border: 4px solid $coral;
                         margin-bottom: 0.25rem;
                         border-radius: 20px;
+                        padding: 0.5rem 0.8rem;
+                        width: 150px;
                     }
                     button.menu-tab-btn:hover,
                     button.menu-tab-btn:focus {
