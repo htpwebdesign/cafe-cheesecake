@@ -3,16 +3,19 @@
 body.post-type-archive-cafe-jobs {
     section.location-container {
         text-align: left;
-
+        padding: 3rem 2rem 0 2rem;
         section.location {
             h2 {
                 font-family: $bungee;
                 padding-bottom: .5rem;
-                border-bottom: $coral solid 3px;
+                // border-bottom: $coral solid 3px;
+                text-decoration: underline;
             }
 
             article.position-container {
-                padding-left: 2.5rem;
+                margin-left: 5rem;
+                padding: 0 1.5rem;
+                border-left: $coral solid 2px;
             }
         }
     }
