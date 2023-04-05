@@ -44,6 +44,7 @@ get_header();
 				}
 				?>
 			</section>
+
 			<?php
 			if ( $query -> have_posts() ){
 				?>
@@ -73,9 +74,7 @@ get_header();
 				</section>
 				<?php
 				wp_reset_postdata();
-	
 			?>
-
 
 			<!-- output faq -->
 			<section class="faq-container">
