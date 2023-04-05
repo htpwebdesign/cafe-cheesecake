@@ -5,7 +5,7 @@ body.post-type-archive-cafe-location {
         margin-bottom: 0;
     }
     section.locations-container {
-        padding-bottom: 2rem;
+        padding: 2rem 0;
         section.locations{
             display: flex;
             flex-wrap: wrap;
@@ -16,13 +16,15 @@ body.post-type-archive-cafe-location {
                 padding: 0 1rem;
 
                 h2, p {
-                    text-align: left;
+                    // text-align: left;
                 }
 
                 img {
                     height: 15rem;
                     max-width: 100%;
                     object-fit: cover;
+                    border-radius: 8px 8px;
+                    border: $blue solid 8px;
                 }
 
             }
@@ -30,17 +32,24 @@ body.post-type-archive-cafe-location {
     }
 
     section.google-maps-container {
+        
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
-        padding: 3rem 0;
+        padding: 3rem 0 7rem 0;
         background-color: $blue;
+
+        h2 {
+            margin-bottom: 3rem;
+        }
         
         div.acf-map {
-            outline: $blue solid 5px;
+            outline: $bg-color solid 10px;
+            border: $coral solid 10px;
             border-radius: 7px 7px;
-            width: 60rem;
+            width: 61rem;
             height: 30rem;
+            margin: 0 auto;
         }
     }
 }
