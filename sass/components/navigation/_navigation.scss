@@ -92,6 +92,7 @@
       color: $text-color-light;
       &:hover {
         background-color: $yellow;
+        border-radius: 30px;
       }
     }
 
@@ -206,6 +207,12 @@
             text-decoration: none;
             color: $text-color;
             transition: 0.3s ease;
+
+            &:hover{
+              background-color: $yellow;
+              padding: 0.2rem 0.6em;
+              border-radius: 20px 20px;
+            }
           }
         }
       }
