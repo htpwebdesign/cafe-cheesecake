@@ -87,7 +87,7 @@ body.single-product {
                     gap: 1rem;
                     width: 80%;
                     li {
-                        border-bottom: 2px solid $coral;
+                        border-bottom: 2px solid $blue;
                         a {
                             text-decoration: none;
                             color: $text-color;
@@ -96,7 +96,7 @@ body.single-product {
                     li:hover,
                     li:focus,
                     li.active {
-                        border-bottom: 2px solid $blue;
+                        border-bottom: 2px solid $coral;
                     }
                 }
             }

@@ -32,9 +32,9 @@ get_header();
 					<section class="founder-info-container">
 						<section class="founder-info">
 						<?php
-							if ( get_field( 'founder_heading' ) ) {
-								echo '<h2>' . get_field( 'founder_heading' ) . '</h2>';
-							}
+							// if ( get_field( 'founder_heading' ) ) {
+							// 	echo '<h2>' . get_field( 'founder_heading' ) . '</h2>';
+							// }
 
 							if ( get_field( 'founder_image' ) ) {
 								echo wp_get_attachment_image( get_field( 'founder_image' ), 'medium', '',

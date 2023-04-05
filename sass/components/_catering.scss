@@ -2,7 +2,7 @@
 
 body.page-id-69 {
     section.catering-container {
-        
+    padding: 1rem 1.5rem;  
         section.catering {
             display: flex;
             flex-wrap: wrap;
@@ -17,7 +17,7 @@ body.page-id-69 {
     }
 
     section.faq-container {
-        margin: 0rem 1rem 5rem 1rem;
+        padding: 0rem 1.5rem 5rem 1.5rem;
         section.faq {
             h2 {
                 padding: 3rem 0 1rem 0;
@@ -44,7 +44,7 @@ body.page-id-69 {
     }
 
     section.catering-form-container {
-        padding: 3rem 0;
+        padding: 3rem 1.5rem;
         background-color: $coral;
         color: $bg-color;
         section.catering-form {
@@ -62,10 +62,10 @@ body.page-id-69 {
     }
 
     section.image-container {
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem 1rem 1.5rem;
         img {
-            width: 20rem;
-            height: 20rem;
+            width: 18rem;
+            height: 18rem;
             object-fit: cover;
             border-radius: 50% 50%;
             border: $blue solid 8px;
