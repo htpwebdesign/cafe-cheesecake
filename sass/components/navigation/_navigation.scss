@@ -147,10 +147,6 @@ Some code as been added (see the comments in the CSS) and some code has been mov
         }
     }
 
-    .main-navigation ul ul a {
-        // width: 200px;
-    }
-
     .main-navigation ul.nav-menu li.focus > ul,
     .main-navigation ul.nav-menu li:hover > ul,
     .main-navigation ul.nav-menu li.toggled > ul {
@@ -186,22 +182,9 @@ Some code as been added (see the comments in the CSS) and some code has been mov
         position: static;
     }
 
-    // .main-navigation.toggled ul {
-    //     display: flex;
-    //     flex-direction: column;
-    // }
-
     .menu-main-menu-container {
         position: initial;
     }
-
-    // .main-navigation.toggled .menu-main-menu-container {
-    //     position: static;
-
-    //     background-color: $coral;
-    //     width: 100%;
-    //     text-align: center;
-    // }
 }
 
 .site-footer {

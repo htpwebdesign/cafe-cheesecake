@@ -1,0 +1,24 @@
+@import "abstracts/abstracts";
+
+body.error404 {
+    div {
+        main.site-main {
+            section.error-404 {
+                height: 70vh;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 68rem) {
+    body.error404 {
+        main {
+            @include page-grid-layout;
+        }
+    }
+}
