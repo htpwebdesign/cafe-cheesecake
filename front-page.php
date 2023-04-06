@@ -32,7 +32,7 @@ get_header();
 						  <?php while( have_rows('carousel') ): the_row(); ?>
 							<li>
 							  <?php 
-									echo wp_get_attachment_image( get_sub_field( 'banner_image' ), 'full')?>
+									echo wp_get_attachment_image( get_sub_field( 'banner_image' ), 'banner-crop')?>
 							  <?php echo "<h2>" . get_sub_field('banner_heading') . "</h2>"; ?>
 							  <?php echo '<p>' . get_sub_field('banner_description') . '</p>'; ?>
 							</li>
@@ -41,17 +41,14 @@ get_header();
 					  <?php endif; ?>
 					  <?php
 
-					if ( get_field( 'arrow_icon' ) ) {
-						echo wp_get_attachment_image( get_field( 'arrow_icon' ), 'medium', '',
-						array(''));
-					}
+				
 					?>
 
 					<section class="cheesecakes-container">
 						<section class="cheesecakes">
 							<?php
 							if ( get_field( 'our_cheesecakes_heading' ) ) {
-								echo '<h3>' . get_field( 'our_cheesecakes_heading' ) . '</h3>';
+								echo '<h2>' . get_field( 'our_cheesecakes_heading' ) . '</h2>';
 							}
 
 							if ( get_field( 'our_cheesecakes_description' ) ) {
@@ -71,7 +68,7 @@ get_header();
 						<section class="favourites">
 							<?php
 							if ( get_field( 'favourites_heading' ) ) {
-								echo '<h3>' . get_field( 'favourites_heading' ) . '</h3>';
+								echo '<h2>' . get_field( 'favourites_heading' ) . '</h2>';
 							}
 
 							// Relationship ACF Field
@@ -106,14 +103,11 @@ get_header();
 							<?php
 
 							if ( get_field( 'drinks_title' ) ) {
-								echo '<h3>' . get_field( 'drinks_title' ) . '</h3>';
+								echo '<h2>' . get_field( 'drinks_title' ) . '</h2>';
 							}
-
 							?>
 
-								
 							<?php
-							
 							$parent_category_slug = 'drinks';
 							$parent_category_id = get_term_by('slug', $parent_category_slug, 'product_cat')->term_id;
 							$child_categories = get_term_children($parent_category_id, 'product_cat');
@@ -125,7 +119,7 @@ get_header();
 								$thumbnail_id = get_term_meta($child_category, 'thumbnail_id', true);
 
 								echo '<div class="single-drinks">';
-								echo '<a href="' . get_term_link($term) . '">' . wp_get_attachment_image($thumbnail_id, 'thumbnail') . '</a>';
+								echo '<a href="' . get_term_link($term) . '">' . wp_get_attachment_image($thumbnail_id, 'thumbnail');
 								echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
 								echo '</div>';
 							}
@@ -148,7 +142,7 @@ get_header();
 							<?php
 
 							if ( get_field( 'merch_heading' ) ) {
-								echo '<h3>' . get_field( 'merch_heading' ) . '</h3>';
+								echo '<h2>' . get_field( 'merch_heading' ) . '</h2>';
 							}
 
 							// Display Merch Posts

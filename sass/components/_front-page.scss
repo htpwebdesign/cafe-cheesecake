@@ -1,302 +1,324 @@
 @import "abstracts/abstracts";
 
 .site-main {
-    .home-blog {
-        .ul {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            max-width: 100vw;
-            overflow: hidden;
-            margin: 0;
+  .home-blog {
+    .ul {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      max-width: 100vw;
+      overflow: hidden;
+      margin: 0;
 
-            li {
-                flex: 0 0 auto;
-                // margin-right: 1rem;
-            }
-        }
-
-        img {
-            // max-width: 2rem;
-            // margin: 0.3rem 0;
-        }
+      li {
+        flex: 0 0 auto;
+        // margin-right: 1rem;
+      }
     }
 
-    section.cheesecakes-container {
-        display: flex;
+    img {
+      // max-width: 2rem;
+      // margin: 0.3rem 0;
+    }
+  }
+
+  section.cheesecakes-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 4rem auto;
+
+    section.cheesecakes {
+      p {
+        margin: 0;
         justify-content: center;
-        width: 80%;
-        margin: 0 auto;
+        text-align: left;
+      }
 
-        section.cheesecakes {
-            p {
-                margin: 0;
-                justify-content: center;
-                text-align: left;
-            }
+      a {
+        display: inline-block;
+        border: 2px solid $coral;
+        border-radius: 25px 25px;
+        margin: 3rem 0;
+        padding: 0.5rem 1.5rem;
+        transition: 0.3s ease;
+        color: $coral;
+        text-decoration: none;
 
-            a {
-                display: inline-block;
-                border: 2px solid $coral;
-                border-radius: 25px 25px;
-                margin: 3rem 0;
-                padding: 0.5rem 1.5rem;
-                transition: 0.3s ease;
-                color: $coral;
-                text-decoration: none;
-
-                &:hover {
-                    background-color: $coral;
-                    color: $bg-color;
-                }
-            }
+        &:hover {
+          background-color: $coral;
+          color: $bg-color;
         }
+      }
     }
+  }
 
-    @media screen and (min-width: 48rem) {
-        section.cheesecakes-container {
-            width: 50%;
-        }
+  @media screen and (min-width: 48rem) {
+    section.cheesecakes-container {
+      width: 50%;
     }
+  }
 
-    .favourites-container {
-        .favourites {
-            ul {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin: 0;
-                padding: 0;
+  .favourites-container {
+    .favourites {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
 
-                li {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    padding: 0 1rem;
-                    a {
-                        img {
-                            margin: 0 auto;
-                            object-fit: cover;
-                            width: 200px;
-                            height: 200px;
-                            border-radius: 50%;
-                        }
-                    }
-                    h3 {
-                        width: 100%;
-                    }
-                }
+        li {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 0 1rem;
+          a {
+            img {
+              margin: 0 auto;
+              border: 4px solid $yellow;
+              outline: 4px solid $coral;
+              object-fit: cover;
+              width: 200px;
+              height: 200px;
+              border-radius: 50%;
+
+              &:hover{
+                filter: color(blue) ;
+              }
             }
-
-            .button {
-                @include button-style;
-            }
+          }
+          h3 {
+            width: 100%;
+          }
         }
+      }
+
+      .button {
+        @include button-style;
+      }
     }
+  }
 }
 
 @media screen and (min-width: 48rem) {
-    .favourites-container {
-        .favourites {
-            ul {
-                display: flex;
-                flex-wrap: wrap;
-                margin: 0;
-                padding: 0;
+  .favourites-container {
+    .favourites {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
 
-                li {
-                    width: 30%;
-                    a {
-                        img {
-                            max-width: 300px;
-                            height: 300px;
-                        }
-                    }
-                }
+        li {
+          width: 30%;
+          a {
+            img {
+              max-width: 300px;
+              height: 300px;
             }
+          }
         }
+      }
     }
+  }
 }
 
 @media screen and (min-width: 82rem) {
-    .favourites-container {
-        .favourites {
-            ul {
-                li {
-                    width: 20%;
-                }
-            }
+  .favourites-container {
+    .favourites {
+      ul {
+        li {
+          width: 20%;
         }
+      }
     }
+  }
 }
 
 section.drinks-container {
-    section.drinks {
-        h3 {
-            width: 100%;
-        }
-
-        .single-drinks-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            .single-drinks {
-                background-color: #fff;
-                padding: 2rem;
-                margin: 1rem 2rem;
-                width: 20rem;
-                height: 20rem;
-                border-radius: 20px;
-                display: flex;
-                flex-wrap: wrap;
-                a {
-                    width: 100%;
-                    text-decoration: none;
-                    color: $text-color;
-                    transition: 0.3s ease;
-
-                    &:hover {
-                        color: $coral;
-                    }
-                    img {
-                        border-radius: 50%;
-                    }
-                }
-            }
-        }
-
-        .button {
-            @include button-style;
-        }
+  section.drinks {
+    h3 {
+      width: 100%;
     }
+
+    .single-drinks-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .single-drinks {
+        background-color: #fff;
+        border: 4px solid $coral;
+        padding: 2rem;
+        margin: 1rem 2rem;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        a {
+          width: 100%;
+          text-decoration: none;
+          color: $text-color;
+          transition: 0.3s ease;
+          font-size: 1.2rem;
+          font-weight: 800;
+
+          &:hover {
+            color: $coral;
+          }
+          img {
+            border-radius: 50%;
+            transition: 0.3s ease;
+            &:hover{
+                box-shadow: 0px 0px 35px #ff4511;
+            }
+          }
+        }
+      }
+    }
+
+    .button {
+      @include button-style;
+    }
+  }
 }
 
 @media screen and (min-width: 48rem) {
-    section.drinks-container {
-        section.drinks {
-            .single-drinks-container {
-                .single-drinks {
-                    width: 20%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    a {
-                        width: 100%;
-                    }
-                }
-
-                .button {
-                    margin: 0 10rem;
-                }
-            }
+  section.drinks-container {
+    section.drinks {
+      .single-drinks-container {
+        .single-drinks {
+          width: 20%;
+          display: flex;
+          flex-wrap: wrap;
+          a {
+            width: 100%;
+          }
         }
+
+        .button {
+          margin: 0 10rem;
+        }
+      }
     }
+  }
 }
 
 section.merch-container {
-    margin: 3rem 0;
-    background-color: $color__background-body;
-    section.merch {
-        h3 {
-            text-align: center;
-            width: 100%;
-            height: 4rem;
-        }
+  margin: 3rem 0;
+  background-color: $color__background-body;
+  section.merch {
+    h2 {
+      text-align: center;
+      width: 100%;
+      height: 4rem;
+    }
 
-        .single-merch-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            text-align: center;
+    .single-merch-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
 
-            .single-merch {
-                width: 40%;
-                a {
-                    text-decoration: none;
+      .single-merch {
+        width: 40%;
+        margin: 0 0 2rem 0;
+        a {
+          text-decoration: none;
 
-                    img {
-                        border-radius: 10px;
-                        height: 200px;
-                        object-fit: cover;
-                    }
-                    h3 {
-                        color: $text-color;
-                        transition: 0.3s ease;
-
-                        &:hover {
-                            color: $coral;
-                        }
-                    }
-                }
-            }
-        }
-
-        .button {
-            display: block;
-            border: 2px solid $coral;
-            border-radius: 25px 25px;
-            margin: 3rem auto;
-            width: fit-content;
-            padding: 0.5rem 1.5rem;
+          img {
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+          }
+          h3 {
+            color: $text-color;
             transition: 0.3s ease;
-            color: $coral;
-            text-decoration: none;
+            margin: 1rem 0 0 0;
 
             &:hover {
-                background-color: $coral;
-                color: $bg-color;
+              color: $coral;
+            }
+          }
+        }
+
+        .amount{
+            bdi{
+                font-weight: 600;
+                color: $coral;
             }
         }
+      }
     }
+
+    .button {
+      display: block;
+      border: 2px solid $coral;
+      border-radius: 25px 25px;
+      margin: 3rem auto;
+      width: fit-content;
+      padding: 0.5rem 1.5rem;
+      transition: 0.3s ease;
+      color: $coral;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $coral;
+        color: $bg-color;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 48rem) {
-    section.merch-container {
-        section.merch {
-            h3 {
-                height: 2rem;
-            }
+  section.merch-container {
+    section.merch {
+      h3 {
+        height: 2rem;
+      }
 
-            .single-merch {
-                width: 18%;
-                a {
-                    img {
-                        width: 100%;
-                        height: 300px;
-                        object-fit: cover;
-                    }
-                }
-            }
+      .single-merch {
+        width: 18%;
+        a {
+          img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+          }
         }
+      }
     }
+  }
 }
 
 @media (min-width: 60rem) {
-    body.page-id-42 {
-        section.home-blog {
-            section.cheesecakes-container {
-                section.cheesecakes {
-                    // @include page-grid-layout;
-                }
-            }
-            section.favourites-container {
-                section.favourites {
-                    // @include page-grid-layout;
-                }
-            }
-
-            section.drinks-container {
-                section.drinks {
-                    // @include page-grid-layout;
-                }
-            }
+  body.page-id-42 {
+    section.home-blog {
+      section.cheesecakes-container {
+        section.cheesecakes {
+          // @include page-grid-layout;
         }
-
-        section.merch-container {
-            section.merch {
-                // @include page-grid-layout;
-            }
+      }
+      section.favourites-container {
+        section.favourites {
+          // @include page-grid-layout;
         }
+      }
+
+      section.drinks-container {
+        section.drinks {
+          // @include page-grid-layout;
+        }
+      }
     }
+
+    section.merch-container {
+      section.merch {
+        // @include page-grid-layout;
+      }
+    }
+  }
 }

@@ -43,3 +43,20 @@
     color: $bg-color;
   }
 }
+
+//Menu Button Tabbing
+@mixin menu-button-style {
+  display: inline-block;
+  border: 2px solid $blue;
+  margin-bottom: 0.25rem;
+  border-radius: 20px;
+  padding: 0.5rem 1.25rem;
+  width: 280px;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $blue;
+    color: $bg-color;
+  }
+}

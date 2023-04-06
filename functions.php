@@ -61,6 +61,10 @@ function cafe_cheesecake_setup() {
 	}
 	add_action('wp_enqueue_scripts', 'enqueue_my_scripts');
 	
+	// Add Crop Size for the Carousel
+
+	add_image_size( 'banner-crop', 1920, 1080, true );
+
 	
 	/*
 		* Switch default core markup for search form, comment form, and comments
