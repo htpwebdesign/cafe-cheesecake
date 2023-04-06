@@ -29,8 +29,11 @@
 					) );
 				}
 				
-			echo "<p><b>BAM Cafe</b> created by <a href='https://brandonbirk.ca/'>Brandon Birk</a>,
-			<a href='https://anhmaile.com/'>Mai Le</a>, and <a href='https://alexandersheh.com/'>Alex Sheh</a>";
+				echo "<div class='creator-container'>";
+				echo "<p><b>BAM Cafe</b> created by <a href='https://brandonbirk.ca/' target='_blank'>Brandon Birk</a>,
+				<a href='https://anhmaile.com/' target='_blank'>Mai Le</a>, and <a href='https://alexandersheh.com/' target='_blank'>Alex Sheh</a>.";
+				echo "</div>";
+
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

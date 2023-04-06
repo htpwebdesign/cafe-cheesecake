@@ -281,5 +281,20 @@ Some code as been added (see the comments in the CSS) and some code has been mov
                 margin: 0 auto;
             }
         }
+
+        .creator-container{
+            width: 80%;
+            text-align: center;
+            color: $text-color-light;
+            a{
+                color: $yellow;
+                text-decoration: none;
+                transition: 0.3s ease;
+                
+                &:hover{
+                    color: $text-color;
+                }
+            }
+        }
     }
 }
