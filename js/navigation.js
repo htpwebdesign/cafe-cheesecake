@@ -4,7 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
+ ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
 
 	// Return early if the navigation doesn't exist.
@@ -55,24 +55,16 @@
 	// Get all the link elements within the menu.
 	const links = menu.getElementsByTagName( 'a' );
 
-	// Get all the link elements with children within the menu.
-	const linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
-
 	// Toggle focus each time a menu link is focused or blurred.
 	for ( const link of links ) {
 		link.addEventListener( 'focus', toggleFocus, true );
 		link.addEventListener( 'blur', toggleFocus, true );
 	}
 
-	// Toggle focus each time a menu link with children receive a touch event.
-	for ( const link of linksWithChildren ) {
-		link.addEventListener( 'touchstart', toggleFocus, false );
-	}
-
 	/**
 	 * Sets or removes .focus class on an element.
 	 */
-	function toggleFocus() {
+	function toggleFocus( event ) {
 		if ( event.type === 'focus' || event.type === 'blur' ) {
 			let self = this;
 			// Move up through the ancestors of the current link until we hit .nav-menu.
@@ -84,16 +76,23 @@
 				self = self.parentNode;
 			}
 		}
-
-		if ( event.type === 'touchstart' ) {
-			const menuItem = this.parentNode;
-			event.preventDefault();
-			for ( const link of menuItem.parentNode.children ) {
-				if ( menuItem !== link ) {
-					link.classList.remove( 'focus' );
-				}
-			}
-			menuItem.classList.toggle( 'focus' );
-		}
 	}
+    
+	// Get all buttons with class of 'sub-menu-toggle'.
+	const subMenuButtons = siteNavigation.getElementsByClassName( 'sub-menu-toggle' );
+
+	// Toggle a class on click for every 'sub-menu-toggle' button.
+	for ( let subMenuButton of subMenuButtons ) {
+		subMenuButton.addEventListener( 'click', function() {
+			const menuItem = this.parentNode;
+			menuItem.classList.toggle( 'toggled' );
+	
+			if ( subMenuButton.getAttribute( 'aria-expanded' ) === 'true' ) {
+				subMenuButton.setAttribute( 'aria-expanded', 'false' );
+			} else {
+				subMenuButton.setAttribute( 'aria-expanded', 'true' );
+			}
+		} );
+	}
+
 }() );

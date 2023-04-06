@@ -172,6 +172,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+
+require get_template_directory() . '/inc/class-fwd-add-sub-menu-button-walker.php';
+
 /**
  * Load Jetpack compatibility file.
  */

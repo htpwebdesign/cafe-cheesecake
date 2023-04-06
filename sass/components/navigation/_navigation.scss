@@ -1,186 +1,208 @@
+/* 
+This code is a modification of the _s navigation styles and meant to replace the default navigation styles in _s.
+Some code as been added (see the comments in the CSS) and some code has been moved into a media query to only apply to larger screens.
+*/
+
 .site-header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $coral;
+    height: 70px;
 
     .site-branding {
         height: 70px;
+
         a.custom-logo-link {
             max-height: 70px;
+
             img.custom-logo {
                 width: 70px;
+                margin-left: 1rem;
             }
         }
         .site-title {
             display: none;
         }
     }
+}
 
-    .main-navigation {
+.main-navigation {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 1rem;
+
+    button.menu-toggle {
+        display: flex;
+        align-items: center;
+        font-size: 3rem;
+        background: transparent;
+        border: none;
+        color: $bg-color;
+        padding: 0 1rem;
+        height: 70px;
+        transition: 0.3s ease;
+    }
+
+    button.menu-toggle:hover {
+        background-color: $yellow;
+    }
+
+    button.sub-menu-toggle {
+        background: none;
+        text-align: center;
         display: block;
-        justify-content: right;
-        div.menu-main-menu-container {
-            position: absolute;
-            background-color: $coral;
-            z-index: 9999999;
-            right: 0;
-            top: 70px;
-            // added
-            width: 100%;
-            text-align: center;
-        }
-        ul {
-            display: none;
-            list-style: none;
-            margin: 0;
-            padding-left: 0;
-
-            ul {
-                box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-                // float: left;
-                position: absolute;
-                top: 100%;
-                // left: -999em;
-                // added
-                left: 0;
-                z-index: 99999;
-                background-color: $coral;
-                width: 100%;
-
-                ul {
-                    left: -999em;
-                    top: 0;
-                }
-
-                a {
-                    width: 100%;
-                    text-align: center;
-                }
-
-                li {
-                    &:hover > ul,
-                    &.focus > ul {
-                        display: block;
-                        left: auto;
-                    }
-                }
-
-                :hover > a,
-                .focus > a {
-                }
-
-                a:hover,
-                a.focus {
-                }
-            }
-
-            li:hover > ul,
-            li.focus > ul {
-                // left: auto;
-            }
-        }
-
-        li {
-            position: relative;
-
-            &:hover > a,
-            &.focus > a {
-            }
-        }
-
-        a {
-            display: block;
-            text-decoration: none;
-            padding: 0.5em;
-            transition: 0.3s ease;
-            color: $text-color-light;
-            &:hover {
-                background-color: $yellow;
-            }
-        }
-
-        .current_page_item > a,
-        .current-menu-item > a,
-        .current_page_ancestor > a,
-        .current-menu-ancestor > a {
-        }
+        margin: 0 auto;
+        border: none;
+        padding: 0.5rem 1rem;
+    }
+    button.sub-menu-toggle:hover {
+        background: $yellow;
     }
 }
-/* Small menu. */
-.menu-toggle,
+
+.main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.main-navigation li {
+    position: relative;
+}
+
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    color: $bg-color;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+    background-color: $yellow;
+}
+
+.main-navigation ul ul {
+    position: absolute;
+    top: 100%;
+    right: 999em;
+    /* The other half of these styles are in the media query */
+}
+
+/* The selector for .toggled has been added */
+.main-navigation ul li.focus > ul,
+.main-navigation ul li.toggled > ul {
+    position: static;
+}
+
 .main-navigation.toggled ul {
     display: block;
 }
 
-@media screen and (min-width: 48em) {
-    .site-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.menu-main-menu-container {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: $coral;
+    width: 100%;
+    text-align: center;
+    z-index: 999999;
+}
 
-        .site-navigation {
-            width: 30%;
-        }
-
-        .menu-toggle {
+@media screen and (min-width: 50em) {
+    .main-navigation {
+        button.menu-toggle {
             display: none;
         }
-
-        .main-navigation {
-            div.menu-main-menu-container {
-                position: static;
-            }
-
-            ul {
-                display: flex;
-                justify-content: right;
-                ul {
-                    left: -999em;
-                }
-                li {
-                    li.menu-item-393 {
-                        position: relative;
-                    }
-                    .sub-menu {
-                        display: block;
-                        position: absolute;
-                        top: 3.5rem;
-                        right: 0rem;
-                        width: 100px;
-                    }
-                    a {
-                        transition: 0.3s ease;
-                        padding: 1rem;
-                    }
-                }
-                li:hover > ul,
-                li.focus > ul {
-                    left: auto;
-                }
-            }
+        button.sub-menu-toggle {
+            display: none;
+        }
+        li {
+            position: static;
         }
     }
-}
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-    .site-main & {
-        margin: 0 0 1.5em;
+
+    .main-navigation ul ul.sub-menu {
+        display: none;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        color: white;
+        z-index: 99999;
+        top: 60px;
+        right: 0;
+        min-width: 150px;
+        flex-direction: column;
+        width: 50px;
+        li {
+            width: 150px;
+        }
+        a {
+            background-color: $coral;
+            transition: 0.3s ease;
+        }
+        a:hover {
+            background-color: $yellow;
+        }
     }
 
-    .nav-links {
+    .main-navigation ul ul a {
+        // width: 200px;
+    }
+
+    .main-navigation ul.nav-menu li.focus > ul,
+    .main-navigation ul.nav-menu li:hover > ul,
+    .main-navigation ul.nav-menu li.toggled > ul {
+        display: block;
+    }
+
+    .main-navigation.toggled ul {
         display: flex;
     }
 
-    .nav-previous {
-        flex: 1 0 50%;
+    .main-navigation ul ul ul {
+        left: -999em;
+        top: 0;
     }
 
-    .nav-next {
-        text-align: end;
-        flex: 1 0 50%;
+    .main-navigation ul ul li:hover > ul,
+    .main-navigation ul ul li.focus > ul {
+        display: block;
     }
+
+    .main-navigation ul li.focus > ul,
+    .main-navigation ul li.toggled > ul {
+        position: absolute;
+    }
+
+    .menu-toggle,
+    .sub-menu-toggle {
+        display: none;
+    }
+
+    .main-navigation ul {
+        display: flex;
+        position: static;
+    }
+
+    // .main-navigation.toggled ul {
+    //     display: flex;
+    //     flex-direction: column;
+    // }
+
+    .menu-main-menu-container {
+        position: initial;
+    }
+
+    // .main-navigation.toggled .menu-main-menu-container {
+    //     position: static;
+
+    //     background-color: $coral;
+    //     width: 100%;
+    //     text-align: center;
+    // }
 }
 
 .site-footer {
