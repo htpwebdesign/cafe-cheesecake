@@ -43,7 +43,7 @@ body.page-id-42 {
 
             a {
                 display: inline-block;
-                border: 2px solid $coral;
+                border: 3px solid $coral;
                 border-radius: 25px 25px;
                 margin: 3rem 0;
                 padding: 0.5rem 1.5rem;
@@ -67,6 +67,9 @@ body.page-id-42 {
 
     .favourites-container {
         .favourites {
+            h2 {
+                margin-bottom: 2.25rem;
+            }
             ul {
                 display: flex;
                 flex-wrap: wrap;
@@ -82,8 +85,8 @@ body.page-id-42 {
                     a {
                         img {
                             margin: 0 auto;
-                            border: 4px solid $yellow;
-                            outline: 4px solid $coral;
+                            border: 5px solid $yellow;
+                            outline: 5px solid $coral;
                             object-fit: cover;
                             width: 200px;
                             height: 200px;
@@ -110,6 +113,8 @@ body.page-id-42 {
 @media screen and (min-width: 48rem) {
     .favourites-container {
         .favourites {
+            max-width: 1200px;
+            margin: 0 auto;
             ul {
                 display: flex;
                 flex-wrap: wrap;
@@ -128,6 +133,12 @@ body.page-id-42 {
             }
         }
     }
+    .drinks-container {
+        .drinks {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    }
 }
 
 @media screen and (min-width: 82rem) {
@@ -135,7 +146,7 @@ body.page-id-42 {
         .favourites {
             ul {
                 li {
-                    width: 20%;
+                    width: 30%;
                 }
             }
         }
@@ -154,10 +165,10 @@ section.drinks-container {
             justify-content: center;
 
             .single-drinks {
-                background-color: #fff;
-                border: 4px solid $coral;
-                padding: 2rem;
-                margin: 1rem 2rem;
+                background-color: #ffd39979;
+                border: 5px solid $coral;
+                padding: 1rem;
+                margin: 1rem 1.5rem;
                 width: 20rem;
                 height: 20rem;
                 border-radius: 20px;
@@ -170,6 +181,7 @@ section.drinks-container {
                     transition: 0.3s ease;
                     font-size: 1.2rem;
                     font-weight: 800;
+                    align-self: center;
 
                     &:hover {
                         color: $coral;
@@ -196,7 +208,8 @@ section.drinks-container {
         section.drinks {
             .single-drinks-container {
                 .single-drinks {
-                    width: 20%;
+                    width: 25%;
+                    max-width: 280px;
                     display: flex;
                     flex-wrap: wrap;
                     a {
@@ -207,6 +220,16 @@ section.drinks-container {
                 .button {
                     margin: 0 10rem;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 82rem) {
+    section.drinks-container {
+        section.drinks {
+            .single-drinks-container {
+                gap: 2rem;
             }
         }
     }
@@ -231,6 +254,7 @@ section.merch-container {
 
             .single-merch {
                 width: 40%;
+                max-width: 500px;
                 margin: 0 0 2rem 0;
                 a {
                     text-decoration: none;
@@ -262,7 +286,7 @@ section.merch-container {
 
         .button {
             display: block;
-            border: 2px solid $coral;
+            border: 3px solid $coral;
             border-radius: 25px 25px;
             margin: 3rem auto;
             width: fit-content;

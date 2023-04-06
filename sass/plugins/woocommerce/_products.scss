@@ -10,14 +10,14 @@ form.woocommerce-ordering {
     select {
         font-family: $roboto;
         padding: 0.25rem;
-        border: 2px solid $blue;
+        border: 3px solid $blue;
         outline: none;
     }
     select:focus {
-        border: 2px solid $coral;
+        border: 3px solid $coral;
     }
     select:active {
-        border: 2px solid $coral;
+        border: 3px solid $coral;
     }
 }
 
@@ -32,11 +32,12 @@ ul.products {
         flex-direction: column;
         align-items: center;
         img {
-            border: 2px solid $blue;
+            border: 5px solid $blue;
+            border-radius: 10px;
         }
         img:hover,
         img:focus {
-            border: 2px solid $coral;
+            border: 4px solid $coral;
         }
         a {
             text-decoration: none;
@@ -46,15 +47,18 @@ ul.products {
 
         a.add_to_cart_button {
             margin-top: 0.5rem;
-            border: 2px solid $blue;
+            border: 3px solid $blue;
+            border-radius: 10px;
             padding: 0.25rem 1.25rem;
         }
         a.add_to_cart_button:hover {
             margin-top: 0.5rem;
-            border: 2px solid $coral;
+            border: 3px solid $coral;
         }
         h2 {
             font-size: 1.35rem;
+            font-family: $roboto;
+            text-transform: capitalize;
         }
     }
 }

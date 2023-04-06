@@ -13,6 +13,12 @@ main.site-main {
         margin-top: 0;
     }
 
+    h2 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: $bungee;
+    }
+
     p {
         line-height: 1.75;
     }
