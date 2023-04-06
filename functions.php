@@ -447,6 +447,14 @@ function cafe_send_new_post($new_status, $old_status, $post) {
 
 add_action('transition_post_status', 'cafe_send_new_post', 10, 3);
 
-
-
+// Create custom dashboard widget for Client Tutorial 
+add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+function my_custom_dashboard_widgets() {
+	global $wp_meta_boxes;
+	// wp_add_dashboard_widget($widget_id, $widget_anme, $callback, $control_callbacks, $callback_args);
+	wp_add_dashboard_widget('custom_links_widget', 'Tutorial', 'custom_dashboard_links');
+}
+function custom_dashboard_links() {
+	echo '<a href="https://cafecheesecake.bcitwebdeveloper.ca/wp-content/uploads/2023/04/BAM-CAFE.pdf">Link to Client Tutorial</a>';
+}
 
