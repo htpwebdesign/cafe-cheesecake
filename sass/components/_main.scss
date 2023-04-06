@@ -19,5 +19,16 @@ main.site-main {
 
     nav.woocommerce-breadcrumb {
         padding: 1rem 0;
+
+        a{
+            text-decoration: none;
+            color: $coral;
+            font-weight: 800;
+            transition: 0.3s ease;
+
+            &:hover{
+                color: $blue;
+            }
+        }
     }
 }
