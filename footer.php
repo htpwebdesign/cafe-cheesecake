@@ -29,6 +29,8 @@
 					) );
 				}
 				
+			echo "<p><b>BAM Cafe</b> created by <a href='https://brandonbirk.ca/'>Brandon Birk</a>,
+			<a href='https://anhmaile.com/'>Mai Le</a>, and <a href='https://alexandersheh.com/'>Alex Sheh</a>";
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
