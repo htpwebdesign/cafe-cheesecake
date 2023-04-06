@@ -1,3 +1,15 @@
+// Cart Page
+.return-to-shop{
+	a{
+		@include button-style;
+	}
+}
+
+.cart-empty .woocommerce-info{
+	background-color: transparent;
+}
+
+
 @media screen and (min-width: 768px) {
 
 	.col2-set {

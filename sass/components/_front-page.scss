@@ -76,10 +76,16 @@
           a {
             img {
               margin: 0 auto;
+              border: 4px solid $yellow;
+              outline: 4px solid $coral;
               object-fit: cover;
               width: 200px;
               height: 200px;
               border-radius: 50%;
+
+              &:hover{
+                filter: color(blue) ;
+              }
             }
           }
           h3 {
@@ -143,6 +149,7 @@ section.drinks-container {
 
       .single-drinks {
         background-color: #fff;
+        border: 4px solid $coral;
         padding: 2rem;
         margin: 1rem 2rem;
         width: 20rem;
