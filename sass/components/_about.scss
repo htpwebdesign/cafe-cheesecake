@@ -17,8 +17,8 @@ article#post-78 {
                 height: 15rem;
                 object-fit: cover;
                 border-radius: 50% 50%;
-                border: $yellow solid 10px;
-                outline: $coral solid 10px;
+                border: $yellow solid 8px;
+                outline: $coral solid 8px;
             }
         }
     }
@@ -40,7 +40,22 @@ article#post-78 {
         padding: 5rem 1.5rem;
         section.join-us-info {
             a.button {
-                @include button-style;
+                display: block;
+                border: 2px solid #f1876b;
+                border-radius: 25px 25px;
+                margin: 0 auto;
+                padding: 0.5rem 1.5rem;
+                transition: 0.3s ease;
+                color: #f1876b;
+                text-decoration: none;
+                background-color: $bg-color;
+                width: 7rem;
+                font-family: inherit;
+
+                &:hover {
+                    background-color: $coral;
+                    color: $text-color-light;
+                }
             }
 
             img {
@@ -48,8 +63,8 @@ article#post-78 {
                 height: 15rem;
                 object-fit: cover;
                 border-radius: 50% 50%;
-                border: $bg-color solid 10px;
-                outline: $coral solid 10px;
+                border: $bg-color solid 8px;
+                outline: $coral solid 8px;
             }
         }
     }
@@ -61,12 +76,20 @@ article#post-78 {
             section.company-info {
                 width: 90%;
                 margin: 0 auto;
+                img {
+                    width: 400px;
+                    height: 400px;
+                }
             }
         }
         section.founder-info-container {
             section.founder-info {
                 width: 90%;
                 margin: 0 auto;
+                img {
+                    width: 18rem;
+                    height: 18rem;
+                }
             }
         }
 

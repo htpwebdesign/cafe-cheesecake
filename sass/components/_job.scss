@@ -1,18 +1,18 @@
 @import "abstracts/abstracts";
 
 body.post-type-archive-cafe-jobs {
-    section.location-container {
-        text-align: left;
-        padding: 3rem 2rem 0 2rem;
-        section.location {
-            h2 {
-                font-family: $bungee;
-                padding-bottom: 0.5rem;
-                // border-bottom: $coral solid 3px;
-                text-decoration: underline;
-            }
-
-            article.position-container {
+    div.jobs-container {
+        padding-bottom: 5rem;
+        section.location-container {
+            text-align: left;
+            padding: 3rem 2rem 0 2rem;
+            section.location {
+                h2 {
+                    font-family: $bungee;
+                    padding-bottom: 0.5rem;
+                    // border-bottom: $coral solid 3px;
+                    text-decoration: underline;
+                }
             }
         }
     }

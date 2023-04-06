@@ -1,52 +1,45 @@
-@import 'abstracts/abstracts';
+@import "abstracts/abstracts";
 body.post-type-archive-cafe-location {
-
     h1 {
         margin-bottom: 0;
     }
     section.locations-container {
         padding: 2rem 0;
-        section.locations{
+        section.locations {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             section.location-single {
                 max-width: 20rem;
-                margin: 1rem .5rem;
+                margin: 1rem 0.5rem;
                 padding: 1.5rem;
-
-                h2, p {
-                    // text-align: left;
-                }
 
                 img {
                     height: 20rem;
                     width: 20rem;
                     object-fit: cover;
                     border-radius: 20px 20px;
-                    border: $yellow solid 7px;
+                    border: $coral solid 7px;
                 }
-
             }
         }
     }
 
     section.google-maps-container {
-        
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 2rem 1.5rem 7rem 1.5rem;
-        background-color: $coral;
+        background-color: $yellow;
 
         h2 {
             font-size: 2rem;
             margin-bottom: 3rem;
-            color: $bg-color;
+            color: $text-color;
         }
-        
+
         div.acf-map {
-            outline: $yellow solid 10px;
+            outline: $coral solid 10px;
             border: $bg-color solid 10px;
             border-radius: 20px 20px;
             width: 90%;
@@ -60,7 +53,7 @@ body.post-type-archive-cafe-location {
     body.post-type-archive-cafe-location {
         section.locations-container {
             @include page-grid-layout;
-            section.locations{
+            section.locations {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
@@ -68,12 +61,8 @@ body.post-type-archive-cafe-location {
         }
         section.google-maps-container {
             div.acf-map {
-                outline: $yellow solid 10px;
-                border: $bg-color solid 10px;
-                border-radius: 20px 20px;
                 width: 62rem;
                 height: 30rem;
-                margin: 0 auto;
             }
         }
     }

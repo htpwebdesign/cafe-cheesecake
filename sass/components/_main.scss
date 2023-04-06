@@ -5,7 +5,7 @@ main.site-main {
     font-family: $roboto;
     color: $text-color;
     text-align: center;
-    padding: 3rem 0;
+    padding: 3rem 0 0 0;
 
     h1 {
         font-family: $abril;
@@ -20,15 +20,34 @@ main.site-main {
     nav.woocommerce-breadcrumb {
         padding: 1rem 0;
 
-        a{
+        a {
             text-decoration: none;
             color: $coral;
             font-weight: 800;
             transition: 0.3s ease;
 
-            &:hover{
+            &:hover {
                 color: $blue;
             }
         }
+    }
+}
+
+body.page-id-17 {
+    main.site-main {
+        padding: 3rem 2rem 5rem 2rem;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li a {
+            display: block;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+        }
+    }
+    div.woocommerce-MyAccount-content {
+        padding: 0.5rem 0;
     }
 }

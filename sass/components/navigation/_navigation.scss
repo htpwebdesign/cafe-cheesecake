@@ -80,11 +80,13 @@ Some code as been added (see the comments in the CSS) and some code has been mov
     text-decoration: none;
     padding: 1rem 1rem;
     color: $bg-color;
+    transition: 0.3s ease;
 }
 
 .main-navigation a:hover,
 .main-navigation a:focus {
     background-color: $yellow;
+    border-radius: 10px 10px;
 }
 
 .main-navigation ul ul {
@@ -209,7 +211,7 @@ Some code as been added (see the comments in the CSS) and some code has been mov
                 margin: 0;
                 padding: 0;
                 font-weight: 600;
-                
+
                 li {
                     padding: 0.3rem;
 
@@ -223,7 +225,6 @@ Some code as been added (see the comments in the CSS) and some code has been mov
                             padding: 0.2rem 0.6em;
                             border-radius: 20px 20px;
                         }
-                        
                     }
                 }
             }
@@ -259,17 +260,17 @@ Some code as been added (see the comments in the CSS) and some code has been mov
                         text-decoration: none;
                         color: $text-color;
 
-                        svg{
+                        svg {
                             fill: $text-color-light;
                             transition: 0.3s ease;
                             display: block;
                             width: 30px;
-                            &:hover{
+                            &:hover {
                                 fill: $yellow;
                             }
                         }
 
-                        img{
+                        img {
                             max-width: 100px;
                         }
                     }
@@ -282,16 +283,16 @@ Some code as been added (see the comments in the CSS) and some code has been mov
             }
         }
 
-        .creator-container{
+        .creator-container {
             width: 80%;
             text-align: center;
             color: $text-color-light;
-            a{
+            a {
                 color: $yellow;
                 text-decoration: none;
                 transition: 0.3s ease;
-                
-                &:hover{
+
+                &:hover {
                     color: $text-color;
                 }
             }
