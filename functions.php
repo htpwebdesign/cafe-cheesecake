@@ -65,7 +65,27 @@ function cafe_cheesecake_setup() {
 
 	add_image_size( 'banner-crop', 1920, 1080, true );
 
+	// Add Logo image to menu
+	add_filter( 'wp_nav_menu_items', 'add_menu_image', 10, 2 );
+
+	function add_menu_image( $items, $args ) {
+		// Set the URL and image path
+		$image_url = 'https://cafecheesecake.bcitwebdeveloper.ca/wp-content/uploads/2023/03/cropped-cropped-cropped-BAM_1.png';
+		$image_path = '/wp-content/uploads/2023/03/cropped-cropped-cropped-BAM_1.png';
 	
+		// Check if the current menu has the "menu-3" theme location
+		if ( $args->theme_location == 'menu-3' ) {
+			
+		// Create the menu item with the image
+		$menu_item = '<li class="menu-item"><a href="https://cafecheesecake.bcitwebdeveloper.ca/"><img src="' . $image_url . '" alt="BAM Cafe"></a></li>';
+	
+		// Add the menu item to the end of the menu
+		$items .= $menu_item;
+	
+		}
+		// Return the updated menu
+		return $items;
+	}
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
