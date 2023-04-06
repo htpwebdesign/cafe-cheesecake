@@ -1,4 +1,4 @@
-@import 'abstracts/abstracts';
+@import "abstracts/abstracts";
 
 body.post-type-archive-cafe-jobs {
     section.location-container {
@@ -7,22 +7,37 @@ body.post-type-archive-cafe-jobs {
         section.location {
             h2 {
                 font-family: $bungee;
-                padding-bottom: .5rem;
+                padding-bottom: 0.5rem;
                 // border-bottom: $coral solid 3px;
                 text-decoration: underline;
             }
 
             article.position-container {
-                margin-left: 5rem;
-                padding: 0 1.5rem;
-                border-left: $coral solid 2px;
             }
         }
     }
-    
 }
 
-@media (min-width: 65rem) {
+@media (min-width: 40rem) {
+    body.post-type-archive-cafe-jobs {
+        section.location-container {
+            section.location {
+                h2 {
+                    font-family: $bungee;
+                    padding-bottom: 0.5rem;
+                    text-decoration: underline;
+                }
+
+                article.position-container {
+                    margin-left: 5rem;
+                    padding: 0 1.5rem;
+                    border-left: $coral solid 2px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 68rem) {
     body.post-type-archive-cafe-jobs {
         section.location-container {
             section.location {

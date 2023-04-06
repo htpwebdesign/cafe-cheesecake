@@ -1,5 +1,11 @@
 @import "abstracts/abstracts";
 
+body.post-type-archive-product {
+    main.site-main {
+        padding: 1rem;
+    }
+}
+
 form.woocommerce-ordering {
     select {
         font-family: $roboto;
@@ -79,7 +85,7 @@ ul.page-numbers {
 @media (min-width: 60rem) {
     body.post-type-archive-product {
         main.site-main {
-            padding: 1rem;
+            padding: 2rem;
         }
     }
 }
@@ -87,7 +93,8 @@ ul.page-numbers {
 @media (min-width: 80rem) {
     body.post-type-archive-product {
         main.site-main {
-            padding: 2rem;
+            padding: 3rem;
+            @include product-grid-layout;
         }
     }
 }
@@ -99,55 +106,3 @@ ul.page-numbers {
         }
     }
 }
-
-// ul.products {
-//     margin: 0;
-//     padding: 0;
-
-//     li.product {
-//         list-style: none;
-//         position: relative;
-//         margin-bottom: 2em;
-
-//         img {
-//             display: block;
-//         }
-
-//         .button {
-//             display: block;
-//         }
-//     }
-// }
-
-// @media screen and (min-width: 48em) {
-//     ul.products {
-//         li.product {
-//             @include column-width(3);
-//             float: left;
-//             margin-right: $columns__margin;
-
-//             &.first {
-//                 clear: both;
-//             }
-
-//             &.last {
-//                 margin-right: 0;
-//             }
-//         }
-//     }
-
-//     ul.products.columns-1 {
-//         li.product {
-//             float: none;
-//             width: 100%;
-//         }
-//     }
-
-//     @for $i from 2 through 6 {
-//         ul.products.columns-#{$i} {
-//             li.product {
-//                 @include column-width($i);
-//             }
-//         }
-//     }
-// }

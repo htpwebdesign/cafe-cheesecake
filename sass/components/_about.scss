@@ -1,7 +1,6 @@
-@import 'abstracts/abstracts';
+@import "abstracts/abstracts";
 
 article#post-78 {
-
     h1 {
         margin-bottom: 0;
     }
@@ -42,26 +41,24 @@ article#post-78 {
         section.join-us-info {
             a.button {
                 @include button-style;
-
             }
 
             img {
-            width: 20rem;
-            height: 20rem;
-            object-fit: cover;
-            border-radius: 50% 50%;
-            border: $bg-color solid 10px;
-            outline: $coral solid 10px;
+                width: 15rem;
+                height: 15rem;
+                object-fit: cover;
+                border-radius: 50% 50%;
+                border: $bg-color solid 10px;
+                outline: $coral solid 10px;
             }
         }
     }
-
 }
 
 @media (min-width: 40rem) {
-    article#post-78{
+    article#post-78 {
         section.company-info-container {
-            section.company-info{   
+            section.company-info {
                 width: 90%;
                 margin: 0 auto;
             }
@@ -75,10 +72,13 @@ article#post-78 {
 
         section.join-us-info-container {
             section.join-us-info {
-
                 div.join-us-content {
                     width: 90%;
                     margin: 0 auto;
+                }
+                img {
+                    width: 20rem;
+                    height: 20rem;
                 }
             }
         }
@@ -86,10 +86,10 @@ article#post-78 {
 }
 
 @media (min-width: 65rem) {
-    article#post-78{
+    article#post-78 {
         section.company-info-container {
             @include page-grid-layout;
-            section.company-info{   
+            section.company-info {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -109,7 +109,6 @@ article#post-78 {
         section.join-us-info-container {
             @include page-grid-layout;
             section.join-us-info {
-
                 div.join-us-content {
                     width: 80%;
                     margin: 0 auto;
